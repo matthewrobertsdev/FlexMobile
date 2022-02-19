@@ -6,7 +6,7 @@
  * @flow strict-local
  */
 
-import React, { useContext } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import {
   Button,
   SafeAreaView,
@@ -15,6 +15,9 @@ import {
   Text,
   useColorScheme,
   View,
+  Image,
+  Platform,
+  
 } from 'react-native';
 
 import {
@@ -26,6 +29,7 @@ import { SettingsContext } from './RootStackScreen';
 let nums = ['1', '2abc', '3\nh', '4', '5\ni', '6def', '7']
 
 const MainScreen = ({ navigation }) => {
+  const [loaded, setLoaded]=useState(false)
   const [settings, setSettings] = useContext(SettingsContext);
 
   const isDarkMode = useColorScheme() === 'dark';
@@ -34,6 +38,22 @@ const MainScreen = ({ navigation }) => {
     backgroundColor: isDarkMode ? Colors.darker : Colors.lighter,
   };
 
+  useEffect(() => {
+    if (Platform.OS==='ios') {
+      navigation.setOptions({
+        headerShown: true
+      })
+    } else {
+    const timer=setTimeout(()=>{
+      setLoaded(true)
+      navigation.setOptions({
+        headerShown: true
+      });
+    } , 1000)
+    return () => clearTimeout(timer );
+  }
+  }, [navigation, loaded]);
+  if (loaded || Platform.OS=='ios') {
   return (
     <SafeAreaView style={{ flex: 1 }}>
       <StatusBar barStyle={isDarkMode ? 'light-content' : 'dark-content'} />
@@ -47,13 +67,14 @@ const MainScreen = ({ navigation }) => {
             onPress={() => { navigation.navigate('Flex Values') }} />
           </View>
           <View style={{ display: 'flex', alignItems: 'center', width: '100%', marginTop: 20 }}>
-            <Button title='About Flexbox' color='red'/>
+            <Button title='About Flexbox' color='red' />
           </View>
           <View style={{
             display: 'flex', alignItems: 'center', width: '100%',
             marginTop: 20
           }}>
-            <Button title='About Learn Flex' color='red'/>
+            <Button title='About Learn Flex' color='red'
+            onPress={() => { navigation.navigate('About Learn Flex') }}/>
           </View>
           <View style={{
             display: 'flex', alignItems: 'center', width: '100%',
@@ -120,6 +141,19 @@ const MainScreen = ({ navigation }) => {
       </ScrollView>
     </SafeAreaView>
   );
+            } else {
+              return (
+                <SafeAreaView>
+                <View style={{height: 100, backgroundColor: 'rgb(255,59,48)'}}/>
+                <View style={{width: '100%', height: '100%', backgroundColor: 'rgb(255,59,48)', 
+                alignItems: 'center'}}>
+                  <Image style={{width: 200, height: 200, marginBottom: 30}} source={require('./resources/Icon.png')}
+                  accessibilityLabel="Learn Flex icon"/>
+                  <Text style={{color: 'white', fontSize: 40}}>Learn Flex</Text>
+                </View>
+              </SafeAreaView>
+              )
+            }
 };
 
 export default MainScreen;

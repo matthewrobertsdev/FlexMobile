@@ -3,9 +3,16 @@ import { Button, Platform } from 'react-native'
 import { createNativeStackNavigator } from '@react-navigation/native-stack'
 import MainScreen from './MainScreen'
 import ChangeFlexPropertiesScreen from './ChangeFlexPropertiesScreen'
+import AndroidLoadingScreen from './AndroidLoadingScreen'
+import AboutScreen from './AboutScreen'
 
 const mainScreenOptions = ({ navigation }) => ({
   title: 'Learn Flex',
+  headerShown: false,
+})
+
+const loadingScreenOptions = ({navigation}) => ({
+  headerShown: false,
 })
 
 
@@ -42,6 +49,7 @@ function RootStackScreen() {
         options={mainScreenOptions}/>
         <RootStack.Screen name="Flex Values" component={ChangeFlexPropertiesScreen} 
         options={modalScreenOptions}/>
+        <RootStack.Screen name="About Learn Flex" component={AboutScreen}/>
       </RootStack.Group>
     </RootStack.Navigator>
     </SettingsContext.Provider>

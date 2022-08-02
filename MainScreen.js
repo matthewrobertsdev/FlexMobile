@@ -25,6 +25,8 @@ import {
 } from 'react-native/Libraries/NewAppScreen';
 
 import { SettingsContext } from './RootStackScreen';
+import { useHeaderHeight } from '@react-navigation/elements';
+
 
 let nums = ['1', '2abc', '3\nh', '4', '5\ni', '6def', '7']
 
@@ -37,48 +39,60 @@ const MainScreen = ({ navigation }) => {
   const backgroundStyle = {
     backgroundColor: isDarkMode ? Colors.darker : Colors.lighter,
   };
+  const headerHeight = useHeaderHeight();
+
+  let scrollViewTopMargin = 0
+
+  if (Platform.OS === 'ios') {
+    scrollViewTopMargin = headerHeight
+  }
 
   useEffect(() => {
     if (Platform.OS==='ios') {
       navigation.setOptions({
-        headerShown: true
+        headerShown: true,
+        headerTransparent: true,
+        headerBlurEffect: 'regular',
       })
     } else {
     const timer=setTimeout(()=>{
       setLoaded(true)
       navigation.setOptions({
-        headerShown: true
-      });
+        headerShown: true,
+        headerTransparent: false,
+        headerTitle: 'Learn Flex',
+        headerStyle: { backgroundColor: 'rgb(255,59,48)' }
+      })
     } , 1000)
     return () => clearTimeout(timer );
   }
-  }, [navigation, loaded]);
+  }, [navigation, loaded, isDarkMode]);
   if (loaded || Platform.OS=='ios') {
   return (
-    <SafeAreaView style={{ flex: 1 }}>
-      <StatusBar barStyle={isDarkMode ? 'light-content' : 'dark-content'} />
+    <>
+      <StatusBar barStyle={isDarkMode ? 'light-content' : 'dark-content'} backgroundColor="rgb(255,59,48)"/>
       <ScrollView>
         <View style={{
           display: 'flex', justifyContent: 'space-between', alignItems: 'center', width: '100%',
-          marginTop: 20
+          marginTop: scrollViewTopMargin+20
         }}>
           <View style={{ display: 'flex', alignItems: 'center', width: '100%' }}>
-            <Button title='Change Flex Values' color='red'
+            <Button title='Change Flex Values' color='rgb(255,59,48)'
             onPress={() => { navigation.navigate('Flex Values') }} />
           </View>
-          <View style={{ display: 'flex', alignItems: 'center', width: '100%', marginTop: 20 }}>
-            <Button title='About Flexbox' color='red' />
+          <View style={{ display: 'flex', alignItems: 'center', width: '100%', marginTop: 15 }}>
+            <Button title='About Flexbox' color='rgb(255,59,48)' />
           </View>
           <View style={{
             display: 'flex', alignItems: 'center', width: '100%',
-            marginTop: 20
+            marginTop: 15
           }}>
-            <Button title='About Learn Flex' color='red'
+            <Button title='About Learn Flex' color='rgb(255,59,48)'
             onPress={() => { navigation.navigate('About Learn Flex') }}/>
           </View>
           <View style={{
             display: 'flex', alignItems: 'center', width: '100%',
-            marginTop: 20
+            marginTop: 15
           }}>
             <Text style={{ fontSize: 20, color: isDarkMode ? 'white' : 'black', textAlign: 'center' }}>
               With "wrap" assigned and defined width and height:
@@ -139,10 +153,12 @@ const MainScreen = ({ navigation }) => {
           <View style={{height: 40}}></View>
         </View>
       </ScrollView>
-    </SafeAreaView>
+      </>
   );
             } else {
               return (
+                <>
+                <StatusBar barStyle={isDarkMode ? 'light-content' : 'dark-content'} backgroundColor="rgb(255,59,48)"/>
                 <SafeAreaView>
                 <View style={{height: 100, backgroundColor: 'rgb(255,59,48)'}}/>
                 <View style={{width: '100%', height: '100%', backgroundColor: 'rgb(255,59,48)', 
@@ -152,6 +168,7 @@ const MainScreen = ({ navigation }) => {
                   <Text style={{color: 'white', fontSize: 40}}>Learn Flex</Text>
                 </View>
               </SafeAreaView>
+              </>
               )
             }
 };

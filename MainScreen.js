@@ -26,6 +26,7 @@ import {
 
 import { SettingsContext } from './RootStackScreen';
 import { useHeaderHeight } from '@react-navigation/elements';
+import DrawerToggleButton from './DrawerToggleButton';
 
 
 let nums = ['1', '2abc', '3\nh', '4', '5\ni', '6def', '7']
@@ -36,9 +37,6 @@ const MainScreen = ({ navigation }) => {
 
   const isDarkMode = useColorScheme() === 'dark';
 
-  const backgroundStyle = {
-    backgroundColor: isDarkMode ? Colors.darker : Colors.lighter,
-  };
   const headerHeight = useHeaderHeight();
 
   let scrollViewTopMargin = 0
@@ -51,17 +49,17 @@ const MainScreen = ({ navigation }) => {
     if (Platform.OS==='ios') {
       navigation.setOptions({
         headerShown: true,
-        headerTransparent: true,
         headerBlurEffect: 'regular',
+        headerTintColor: isDarkMode ? 'white' : 'white'
       })
     } else {
     const timer=setTimeout(()=>{
       setLoaded(true)
       navigation.setOptions({
         headerShown: true,
-        headerTransparent: false,
-        headerTitle: 'Learn Flex',
-        headerStyle: { backgroundColor: 'rgb(255,59,48)' }
+        headerTitle: 'Container Properties',
+        headerStyle: { backgroundColor: isDarkMode ? 'blue' : 'blue' },
+        headerRight: () => <DrawerToggleButton navigation={navigation}/>,
       })
     } , 1000)
     return () => clearTimeout(timer );
@@ -70,25 +68,23 @@ const MainScreen = ({ navigation }) => {
   if (loaded || Platform.OS=='ios') {
   return (
     <>
-      <StatusBar barStyle={isDarkMode ? 'light-content' : 'dark-content'} backgroundColor="rgb(255,59,48)"/>
+      <StatusBar barStyle={'light-content'} backgroundColor={isDarkMode ? 'black' : 'white'}/>
       <ScrollView>
         <View style={{
           display: 'flex', justifyContent: 'space-between', alignItems: 'center', width: '100%',
-          marginTop: scrollViewTopMargin+20
+          marginTop: +20
         }}>
           <View style={{ display: 'flex', alignItems: 'center', width: '100%' }}>
-            <Button title='Change Flex Values' color='rgb(255,59,48)'
-            onPress={() => { navigation.navigate('Flex Values') }} />
+            <Button title='About Flexbox Containers' color={isDarkMode ? (Platform.OS === 'ios' ? 'rgb(53,139,255)' : 'blue') : 'blue'} />
           </View>
           <View style={{ display: 'flex', alignItems: 'center', width: '100%', marginTop: 15 }}>
-            <Button title='About Flexbox' color='rgb(255,59,48)' />
+            <Button title='Change Flex Container Values' color={isDarkMode ? (Platform.OS === 'ios' ? 'rgb(53,139,255)' : 'blue') : 'blue'}
+            onPress={() => { navigation.navigate('Flex Container Values') }} />
           </View>
           <View style={{
             display: 'flex', alignItems: 'center', width: '100%',
             marginTop: 15
           }}>
-            <Button title='About Learn Flex' color='rgb(255,59,48)'
-            onPress={() => { navigation.navigate('About Learn Flex') }}/>
           </View>
           <View style={{
             display: 'flex', alignItems: 'center', width: '100%',
@@ -109,10 +105,10 @@ const MainScreen = ({ navigation }) => {
               {nums.map((value, index) => {
                 return <View style={{
                   padding: 10,
-                  backgroundColor: isDarkMode ? 'rgb(207,0,30)' : 'rgb(255,59,48)'/*'rgb(96, 31, 159)' : 'rgb(183,84,233)'*/, borderRadius: 10,
+                  backgroundColor: isDarkMode ? 'blue' : 'blue'/*'rgb(96, 31, 159)' : 'rgb(183,84,233)'*/, borderRadius: 10,
                   justifyContent: 'center', alignItems: 'center', margin: 5
                 }} key={value}>
-                  <Text style={{ color: isDarkMode ? 'white' : 'black', fontSize: 20 }}>
+                  <Text style={{ color: isDarkMode ? 'white' : 'white', fontSize: 20 }}>
                     {value}
                   </Text>
                 </View>
@@ -139,10 +135,10 @@ const MainScreen = ({ navigation }) => {
               {nums.map((value, index) => {
                 return <View style={{
                   padding: 10,
-                  backgroundColor: isDarkMode ? 'rgb(207,0,30)' : 'rgb(255,59,48)'/*'rgb(96, 31, 159)' : 'rgb(183,84,233)'*/, borderRadius: 10,
+                  backgroundColor: isDarkMode ? 'blue' : 'blue'/*'rgb(96, 31, 159)' : 'rgb(183,84,233)'*/, borderRadius: 10,
                   justifyContent: 'center', alignItems: 'center', margin: 5
                 }} key={value}>
-                  <Text style={{ color: isDarkMode ? 'white' : 'black', fontSize: 20 }}>
+                  <Text style={{ color: isDarkMode ? 'white' : 'white', fontSize: 20 }}>
                     {value}
                   </Text>
                 </View>

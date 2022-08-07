@@ -19,6 +19,7 @@
  import ButtonWithMargin from './components/ButtonWithMargin'
  import openUrl from './utilities/openUrl'
  import { useHeaderHeight } from '@react-navigation/elements';
+ import DrawerToggleButton from './DrawerToggleButton'
  
  function AboutScreen({navigation}) {
    const versionNumString='1'
@@ -36,17 +37,17 @@
       navigation.setOptions({
         headerShown: true,
         headerTransparent: false,
-        headerStyle: { backgroundColor: 'rgb(255,59,48)' },
-        title: "About Learn Flex"
+        headerStyle: { backgroundColor: isDarkMode ? 'rgb(207,0,30)' : 'rgb(255,59,48)' },
+        title: "About Learn Flex",
       })
      }
   }, []);
   
    return (
      <>
-       <StatusBar barStyle={isDarkMode ? 'light-content' : 'dark-content'} backgroundColor="rgb(255,59,48)"/>
+       <StatusBar barStyle={'light-content'} backgroundColor={isDarkMode ? 'black' : 'white'}/>
        <ScrollView>
-         <View style={{flex: 1, alignItems: 'center', marginTop: scrollViewTopMargin+20}}>
+         <View style={{flex: 1, alignItems: 'center', marginTop: 20}}>
            <Image style={{ width: 150, height: 150, margin: 20 }} 
            source={require('./resources/Icon.png')}
            accessibilityLabel="Learn Flex icon"/>
@@ -63,22 +64,22 @@
                () => {
                  openUrl('https://matthewrobertsdev.github.io/celeritasapps/#/faq')
                }
-             } />
+             } color={isDarkMode ? 'rgb(255,52,52)' : 'rgb(255,59,48)'}/>
              <ButtonWithMargin text='Home Page' onPress={
                () => {
                  openUrl('https://matthewrobertsdev.github.io/celeritasapps/#/')
                }
-             } />
+             } color={isDarkMode ? 'rgb(255,52,52)' : 'rgb(255,59,48)'}/>
              <ButtonWithMargin text='Contact the Developer' onPress={
                () => {
                  openUrl('https://matthewrobertsdev.github.io/celeritasapps/#/contact')
                }
-             } />
+             } color={isDarkMode ? 'rgb(255,52,52)' : 'rgb(255,59,48)'}/>
              <ButtonWithMargin text='Privacy Policy' onPress={
                () => {
                  openUrl('https://matthewrobertsdev.github.io/celeritasapps/#/privacy')
                }
-             } />
+             } color={isDarkMode ? 'rgb(255,52,52)' : 'rgb(255,59,48)'}/>
          </View>
        </ScrollView>
      </>

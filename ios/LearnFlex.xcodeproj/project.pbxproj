@@ -40,6 +40,7 @@
 		665F42311A23869E558E4DF2 /* Pods-LearnFlex.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LearnFlex.release.xcconfig"; path = "Target Support Files/Pods-LearnFlex/Pods-LearnFlex.release.xcconfig"; sourceTree = "<group>"; };
 		81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = LaunchScreen.storyboard; path = LearnFlex/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		845725BA9EA57984495DD89A /* libPods-LearnFlex.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-LearnFlex.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		9F5E040C289ED3C70046A5D2 /* Ionicons.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = Ionicons.ttf; path = "../node_modules/react-native-vector-icons/Fonts/Ionicons.ttf"; sourceTree = "<group>"; };
 		BA469EAAE64D83162AED4EEA /* Pods-LearnFlex.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LearnFlex.debug.xcconfig"; path = "Target Support Files/Pods-LearnFlex/Pods-LearnFlex.debug.xcconfig"; sourceTree = "<group>"; };
 		E8069476D213C46C1C41371F /* libPods-LearnFlex-LearnFlexTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-LearnFlex-LearnFlexTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		ED297162215061F000B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
@@ -86,6 +87,7 @@
 		13B07FAE1A68108700A75B9A /* LearnFlex */ = {
 			isa = PBXGroup;
 			children = (
+				9F5E040C289ED3C70046A5D2 /* Ionicons.ttf */,
 				13B07FAF1A68108700A75B9A /* AppDelegate.h */,
 				13B07FB01A68108700A75B9A /* AppDelegate.m */,
 				13B07FB51A68108700A75B9A /* Images.xcassets */,

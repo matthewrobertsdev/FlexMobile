@@ -20,11 +20,7 @@ import {
   
 } from 'react-native';
 
-import {
-  Colors,
-} from 'react-native/Libraries/NewAppScreen';
-
-import { SettingsContext } from './RootStackScreen';
+import { SettingsContext } from './App';
 import { useHeaderHeight } from '@react-navigation/elements';
 import DrawerToggleButton from './DrawerToggleButton';
 

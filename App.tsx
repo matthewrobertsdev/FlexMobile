@@ -1,25 +1,30 @@
 /**
- * Spiffy Clock App
+ * Learn Flex App
  * https://github.com/facebook/react-native
  *
  * @format
  * @flow strict-local
  */
 
- import React from 'react';
+ import React, { useState } from 'react';
  import { useColorScheme } from 'react-native';
  
  import { NavigationContainer, DefaultTheme, DarkTheme } from '@react-navigation/native';
  
- 
- import RootStackScreen from './RootStackScreen'
- 
+ import DrawerComponents from './DrawerComponents'
+
+ export const SettingsContext = React.createContext();
+
  const App: () => Node = () => {
    const isDarkMode = useColorScheme() === 'dark';
    const theme = isDarkMode ? DarkTheme : DefaultTheme
+   const [settings, setSettings]=useState({justifyContent: 'flex-start', alignContent: 'flex-start', 
+   flexDirection: 'row', alignItems: 'flex-start'})
    return (
      <NavigationContainer theme={theme} children={null}>
-       <RootStackScreen/>
+      <SettingsContext.Provider value={[settings, setSettings]}>
+       <DrawerComponents/>
+      </SettingsContext.Provider>
      </NavigationContainer>
    );
  }

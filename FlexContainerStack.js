@@ -13,7 +13,7 @@ import DrawerToggleButton from './DrawerToggleButton';
 
 const Stack = createStackNavigator();
 
-export default function FlexContainerStack({navigation}) {
+export default function FlexContainerStack() {
   const isDarkMode = useColorScheme() === 'dark';
   let detailScreenOptionsiOS1 = ({ navigation }) => ({
     headerShown: true,
@@ -26,19 +26,22 @@ let detailScreenOptionsiOS2 = ({ navigation }) => ({
   headerShown: true,
   headerTintColor: isDarkMode ? 'white' : 'white',
   headerStyle: {backgroundColor: isDarkMode ? 'blue' : 'blue'},
-  title: "Container Values"
+  title: "Container Values",
+  headerRight: () => <DrawerToggleButton navigation={navigation}/>
 })
 
 let detailScreenOptionsAndroid1 = ({ navigation }) => ({
   headerShown: false,
   headerStyle: {backgroundColor: isDarkMode ? 'blue' : 'blue'},
   title: "",
+  headerRight: () => <DrawerToggleButton navigation={navigation}/>
 })
 
 let detailScreenOptionsAndroid2 = ({ navigation }) => ({
   headerShown: true,
   headerStyle: {backgroundColor: isDarkMode ? 'blue' : 'blue'},
   title: "Container Values",
+  headerRight: () => <DrawerToggleButton navigation={navigation}/>
 })
 if (Platform.OS === 'android') {
   return (

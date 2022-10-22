@@ -8,7 +8,7 @@ import {
 } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import PropertyPicker from './PropertyPicker'
-import { SettingsContext } from './RootStackScreen';
+import { SettingsContext } from './App';
 import { useHeaderHeight } from '@react-navigation/elements';
 import DrawerToggleButton from './DrawerToggleButton'
 
@@ -21,8 +21,8 @@ const alignItemsValues=['flex-start', 'flex-end', 'center', 'stretch',
 'baseline']
 
 const FlexPropertiesScreen = ({navigation}) => {
-  const isDarkMode = useColorScheme() === 'dark';
   const [settings, setSettings] = useContext(SettingsContext);
+  const isDarkMode = useColorScheme() === 'dark';
   const [flexDirection, setFlexDirection]=useState(settings.flexDirection)
   const [justifyContent, setJustifyContent]=useState(settings.justifyContent)
   const [alignContent, setAlignContent]=useState(settings.alignContent)
@@ -30,6 +30,8 @@ const FlexPropertiesScreen = ({navigation}) => {
   const headerHeight = useHeaderHeight();
 
   let scrollViewTopMargin = 0
+
+  const pickerForegroundColor = 'rgb(40, 130, 255)'
 
   if (Platform.OS === 'ios') {
     scrollViewTopMargin = headerHeight
@@ -55,19 +57,19 @@ const FlexPropertiesScreen = ({navigation}) => {
         onValueChange={(itemValue, _) => {
           setFlexDirection(itemValue)
           setSettings({...settings, flexDirection: itemValue})
-          }} itemStyle={{color: isDarkMode ? 'lightblue' : 'blue'}}/>
+          }} itemStyle={{color: pickerForegroundColor}}/>
         <Text style={{fontSize: 25, color: isDarkMode ? 'white' : 'black'}}>justify-content:</Text>
         <PropertyPicker properties={justifyContentValues} selectedProperty={justifyContent}
         onValueChange={(itemValue, _) => {
           setJustifyContent(itemValue)
           setSettings({...settings, justifyContent: itemValue})
-          }} itemStyle={{color: isDarkMode ? 'lightblue' : 'blue'}}/>
+          }} itemStyle={{color: pickerForegroundColor}}/>
           <Text style={{fontSize: 25, color: isDarkMode ? 'white' : 'black'}}>align-content:</Text>
         <PropertyPicker properties={alignContentValues} selectedProperty={alignContent}
         onValueChange={(itemValue, _) => {
           setAlignContent(itemValue)
           setSettings({...settings, alignContent: itemValue})
-          }} itemStyle={{color: isDarkMode ? 'lightblue' : 'blue'}}/>
+          }} itemStyle={{color: pickerForegroundColor}}/>
           <Text style={{fontSize: 25, color: isDarkMode ? 'white' : 'black'}}>align-items:</Text>
           <PropertyPicker properties={alignItemsValues} selectedProperty={alignItems}
         onValueChange={(itemValue, _) => {

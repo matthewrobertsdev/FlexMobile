@@ -95,8 +95,7 @@ const MainScreen = ({ navigation }) => {
             <View style={{
               display: 'flex', width: 300, height: 300, flexWrap: 'wrap', flexDirection: settings.flexDirection,
               justifyContent: settings.justifyContent, alignContent: settings.alignContent, alignItems: settings.alignItems,
-              backgroundColor: isDarkMode ? 'rgb(50,50,50)' : 'gray',
-              borderRadius: 20
+              backgroundColor: isDarkMode ? 'rgb(50,50,50)' : 'gray', borderRadius: 20
             }}>
               {nums.map((value, index) => {
                 return <View style={{

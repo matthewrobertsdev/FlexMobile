@@ -10,7 +10,6 @@ import { SafeAreaView } from 'react-native-safe-area-context';
 import PropertyPicker from './PropertyPicker'
 import { SettingsContext } from './App';
 import { useHeaderHeight } from '@react-navigation/elements';
-import DrawerToggleButton from './DrawerToggleButton'
 
 const flexDirectionValues=['row', 'column', 'row-reverse', 'column-reverse']
 const justifyContentValues=['flex-start', 'flex-end', 'center', 'space-between',
@@ -20,13 +19,14 @@ const alignContentValues=['flex-start', 'flex-end', 'center', 'stretch',
 const alignItemsValues=['flex-start', 'flex-end', 'center', 'stretch',
 'baseline']
 
-const FlexPropertiesScreen = ({navigation}) => {
+const ChangeFlexContainerScreen = ({navigation}) => {
   const [settings, setSettings] = useContext(SettingsContext);
   const isDarkMode = useColorScheme() === 'dark';
   const [flexDirection, setFlexDirection]=useState(settings.flexDirection)
   const [justifyContent, setJustifyContent]=useState(settings.justifyContent)
   const [alignContent, setAlignContent]=useState(settings.alignContent)
   const [alignItems, setAlignItems]=useState(settings.alignItems)
+  const [rowGap, setRowGap]=useState(settings.rowGap)
   const headerHeight = useHeaderHeight();
 
   let scrollViewTopMargin = 0
@@ -75,10 +75,10 @@ const FlexPropertiesScreen = ({navigation}) => {
         onValueChange={(itemValue, _) => {
           setAlignItems(itemValue)
           setSettings({...settings, alignItems: itemValue})
-          }} itemStyle={{color: isDarkMode ? 'lightblue' : 'blue'}}/>
+          }} itemStyle={{color: pickerForegroundColor}}/>
       </View>
       </ScrollView>
     </SafeAreaView>
   )
 }
-export default FlexPropertiesScreen
+export default ChangeFlexContainerScreen

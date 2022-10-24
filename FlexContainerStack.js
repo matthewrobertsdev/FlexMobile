@@ -7,7 +7,7 @@ import {createStackNavigator} from '@react-navigation/stack';
 
 //import pages
 import MainScreen from './MainScreen';
-import ChangeFlexPropertiesScreen from './ChangeFlexPropertiesScreen'
+import ChangeFlexContainerScreen from './ChangeFlexContainerScreen'
 
 import DrawerToggleButton from './DrawerToggleButton';
 
@@ -51,7 +51,7 @@ if (Platform.OS === 'android') {
         component={MainScreen}
         options={detailScreenOptionsAndroid1}
       />
-      <Stack.Screen name={"Flex Container Values"} component={ChangeFlexPropertiesScreen}
+      <Stack.Screen name={"Flex Container Values"} component={ChangeFlexContainerScreen}
           options={detailScreenOptionsAndroid2}/>
     </Stack.Navigator>
   );
@@ -63,7 +63,7 @@ if (Platform.OS === 'android') {
         component={MainScreen}
         options={detailScreenOptionsiOS1}
       />
-      <Stack.Screen name={"Flex Container Values"} component={ChangeFlexPropertiesScreen}
+      <Stack.Screen name={"Flex Container Values"} component={ChangeFlexContainerScreen}
       options={detailScreenOptionsiOS2}/>
     </Stack.Navigator>
   )

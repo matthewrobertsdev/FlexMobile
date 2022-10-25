@@ -26,7 +26,6 @@ const ChangeFlexContainerScreen = ({navigation}) => {
   const [justifyContent, setJustifyContent]=useState(settings.justifyContent)
   const [alignContent, setAlignContent]=useState(settings.alignContent)
   const [alignItems, setAlignItems]=useState(settings.alignItems)
-  const [rowGap, setRowGap]=useState(settings.rowGap)
   const headerHeight = useHeaderHeight();
 
   let scrollViewTopMargin = 0

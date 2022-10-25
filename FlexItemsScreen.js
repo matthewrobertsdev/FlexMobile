@@ -17,9 +17,6 @@
  } from 'react-native';
  import { SettingsContext } from './App';
 
- let nums = ['1', '2abc', '3\nh']
-
-
  import { useHeaderHeight } from '@react-navigation/elements';
  
  function FlexItemsScreen({navigation}) {
@@ -80,7 +77,7 @@
                   backgroundColor: 'rgb(93, 0, 255)', borderRadius: 10,
                   justifyContent: 'center', alignItems: 'center', margin: 5, flexGrow: 1, 
                   flexBasis: settings.flexBasisFor1, flexGrow: settings.flexGrowFor1,
-                  flexShrink: settings.flexShrinkFor1
+                  flexShrink: settings.flexShrinkFor1, alignSelf: settings.alignSelfFor1
                 }} key={'1'}>
                   <Text style={{ color: isDarkMode ? 'white' : 'white', fontSize: 20 }}>
                     {'1'}
@@ -91,7 +88,7 @@
                   backgroundColor: 'rgb(93, 0, 255)', borderRadius: 10,
                   justifyContent: 'center', alignItems: 'center', margin: 5, 
                   flexBasis: settings.flexBasisFor2abc, flexGrow: settings.flexGrowFor2abc,
-                  flexShrink: settings.flexShrinkFor2abc
+                  flexShrink: settings.flexShrinkFor2abc, alignSelf: settings.alignSelfFor2abc
                 }} key={'2abc'}>
                   <Text style={{ color: isDarkMode ? 'white' : 'white', fontSize: 20 }}>
                     {'2abc'}
@@ -102,7 +99,7 @@
                   backgroundColor: 'rgb(93, 0, 255)', borderRadius: 10,
                   justifyContent: 'center', alignItems: 'center', margin: 5,
                   flexBasis: settings.flexBasisFor3h, flexGrow: settings.flexGrowFor3h,
-                  flexShrink: settings.flexShrinkFor3h
+                  flexShrink: settings.flexShrinkFor3h, alignSelf: settings.alignSelfFor3h
                 }} key={'3\nh'}>
                   <Text style={{ color: isDarkMode ? 'white' : 'white', fontSize: 20 }}>
                     {'3\nh'}

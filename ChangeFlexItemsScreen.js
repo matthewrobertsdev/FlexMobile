@@ -17,7 +17,8 @@ const flexGrowValues=[0, 1, 2, 3, 4, 5]
 
 const flexShrinkValues=[0, 1, 2, 3, 4, 5]
 
-
+const alignSelfValues = ['auto', 'flex-start', 'flex-end', 'center', 'stretch',
+'baseline']
 
 const ChangeFlexItemsScreen = ({navigation}) => {
   const [settings, setSettings] = useContext(SettingsContext);
@@ -31,6 +32,9 @@ const ChangeFlexItemsScreen = ({navigation}) => {
   const [flexShrinkFor1, setFlexShrinkFor1]=useState(settings.flexShrinkFor1)
   const [flexShrinkFor2abc, setFlexShrinkFor2abc]=useState(settings.flexShrinkFor2abc)
   const [flexShrinkFor3h, setFlexShrinkFor3h]=useState(settings.flexShrinkFor3h)
+  const [alignSelfFor1, setAlignSelfFor1]=useState(settings.alignSelfFor1)
+  const [alignSelfFor2abc, setAlignSelfFor2abc]=useState(settings.alignSelfFor2abc)
+  const [alignSelfFor3h, setAlignSelfkFor3h]=useState(settings.alignSelfFor3h)
   const headerHeight = useHeaderHeight();
 
   let scrollViewTopMargin = 0
@@ -108,6 +112,24 @@ const ChangeFlexItemsScreen = ({navigation}) => {
         onValueChange={(itemValue, _) => {
           setFlexShrinkFor3h(itemValue)
           setSettings({...settings, flexShrinkFor3h: itemValue})
+          }} itemStyle={{color: pickerForegroundColor}}/>
+          <Text style={{fontSize: 25, color: isDarkMode ? 'white' : 'black'}}>1: align-self</Text>
+           <PropertyPicker properties={alignSelfValues} selectedProperty={alignSelfFor1}
+        onValueChange={(itemValue, _) => {
+          setAlignSelfFor1(itemValue)
+          setSettings({...settings, alignSelfFor1: itemValue})
+          }} itemStyle={{color: pickerForegroundColor}}/>
+          <Text style={{fontSize: 25, color: isDarkMode ? 'white' : 'black'}}>2abc: align-self</Text>
+        <PropertyPicker properties={alignSelfValues} selectedProperty={alignSelfFor2abc}
+        onValueChange={(itemValue, _) => {
+          setAlignSelfFor2abc(itemValue)
+          setSettings({...settings, alignSelfFor2abc: itemValue})
+          }} itemStyle={{color: pickerForegroundColor}}/>
+          <Text style={{fontSize: 25, color: isDarkMode ? 'white' : 'black'}}>3h: align-self</Text>
+        <PropertyPicker properties={alignSelfValues} selectedProperty={alignSelfFor3h}
+        onValueChange={(itemValue, _) => {
+          setAlignSelfFor3h(itemValue)
+          setSettings({...settings, alignSelfFor3h: itemValue})
           }} itemStyle={{color: pickerForegroundColor}}/>
       </View>
       </ScrollView>

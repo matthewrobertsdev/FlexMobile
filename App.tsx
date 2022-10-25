@@ -21,7 +21,8 @@
    const [settings, setSettings]=useState({justifyContent: 'flex-start', alignContent: 'flex-start', 
    flexDirection: 'row', alignItems: 'flex-start', rowGap: 0, flexBasisFor1: 'auto', 
    flexBasisFor2abc: 'auto', flexBasisFor3h: 'auto', flexGrowFor1: 0, flexGrowFor2abc: 0, flexGrowFor3h: 0,
-   flexShrinkFor1: 0, flexShrinkFor2abc: 0, flexShrinkFor3h: 0})
+   flexShrinkFor1: 0, flexShrinkFor2abc: 0, flexShrinkFor3h: 0, alignSelfFor1: 'auto', alignSelf2abc: 'auto', 
+   alignSelf3h: 'auto'})
    return (
      <NavigationContainer theme={theme} children={null}>
       <SettingsContext.Provider value={[settings, setSettings]}>

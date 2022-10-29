@@ -10,7 +10,7 @@ const DrawerToggleButton = ({navigation}) => {
         style={{paddingLeft: 10, paddingRight: 10, marginRight: 7.5}}
         name={'menu-outline'}
         size={27.5}
-        color={isDarkMode ? 'white' : (Platform.OS === 'ios' ? 'white' : 'black')}
+        color={'white'}
         onPress={() => {
           navigation.toggleDrawer();
         }}

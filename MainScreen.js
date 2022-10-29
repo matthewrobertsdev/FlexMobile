@@ -64,7 +64,7 @@ const MainScreen = ({ navigation }) => {
   if (loaded || Platform.OS=='ios') {
   return (
     <>
-      <StatusBar barStyle={'light-content'} backgroundColor={isDarkMode ? 'black' : 'white'}/>
+      <StatusBar barStyle={'light-content'} backgroundColor={'blue'}/>
       <ScrollView>
         <View style={{
           display: 'flex', justifyContent: 'space-between', alignItems: 'center', width: '100%',

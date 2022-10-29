@@ -19,6 +19,9 @@ let detailScreenOptionsAndroid1 = ({ navigation }) => ({
   headerShown: true,
   headerStyle: {backgroundColor: 'rgb(59, 59, 147)'},
   title: "Flex Order",
+  headerTitleStyle: {
+    color: 'white'
+  },
   headerRight: () => <DrawerToggleButton navigation={navigation}/>
 })
 let detailScreenOptionsiOS = ({ navigation }) => ({

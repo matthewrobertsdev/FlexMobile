@@ -20,6 +20,9 @@ let detailScreenOptionsAndroid1 = ({ navigation }) => ({
   headerShown: true,
   headerStyle: {backgroundColor: 'rgb(93, 0, 255)'},
   title: "Flex Order",
+  headerTitleStyle: {
+    color: 'white'
+  },
   headerRight: () => <DrawerToggleButton navigation={navigation}/>
 })
 let detailScreenOptionsiOS1 = ({ navigation }) => ({
@@ -41,6 +44,9 @@ let detailScreenOptionsAndroid2 = ({ navigation }) => ({
   headerShown: true,
   headerStyle: {backgroundColor: 'rgb(93, 0, 255)'},
   title: "Item Values",
+  headerTitleStyle: {
+    color: 'white'
+  },
   headerRight: () => <DrawerToggleButton navigation={navigation}/>
 })
 if (Platform.OS === 'android') {

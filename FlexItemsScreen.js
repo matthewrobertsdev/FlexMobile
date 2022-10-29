@@ -41,7 +41,7 @@
   
    return (
      <>
-       <StatusBar barStyle={'light-content'} backgroundColor={isDarkMode ? 'black' : 'white'}/>
+       <StatusBar barStyle={'light-content'} backgroundColor={'rgb(93, 0, 255)'}/>
        <ScrollView>
          <View style={{flex: 1, alignItems: 'center', marginTop: 20}}>
          <View style={{ display: 'flex', alignItems: 'center', width: '100%' }}>

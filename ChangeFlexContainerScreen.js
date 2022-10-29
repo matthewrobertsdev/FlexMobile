@@ -47,7 +47,7 @@ const ChangeFlexContainerScreen = ({navigation}) => {
   }, []);
   return (
     <SafeAreaView style={{flex: 1}}>
-      <StatusBar barStyle={'light-content'} backgroundColor={isDarkMode ? 'black' : 'white'}/>
+      <StatusBar barStyle={'light-content'} backgroundColor={'blue'}/>
       <ScrollView>
       <View style={{display: 'flex', alignItems: 'center', width: '100%', 
       marginTop: 20}}>

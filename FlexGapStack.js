@@ -19,6 +19,9 @@ let detailScreenOptionsAndroid1 = ({ navigation }) => ({
   headerShown: true,
   headerStyle: {backgroundColor: 'rgb(0, 142, 0)'},
   title: "Flex Gap",
+  headerTitleStyle: {
+    color: 'white'
+  },
   headerRight: () => <DrawerToggleButton navigation={navigation}/>
 })
 let detailScreenOptionsiOS = ({ navigation }) => ({

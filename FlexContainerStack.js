@@ -34,6 +34,9 @@ let detailScreenOptionsAndroid1 = ({ navigation }) => ({
   headerShown: false,
   headerStyle: {backgroundColor: isDarkMode ? 'blue' : 'blue'},
   title: "",
+  headerTitleStyle: {
+    color: 'white'
+  },
   headerRight: () => <DrawerToggleButton navigation={navigation}/>
 })
 
@@ -41,6 +44,9 @@ let detailScreenOptionsAndroid2 = ({ navigation }) => ({
   headerShown: true,
   headerStyle: {backgroundColor: isDarkMode ? 'blue' : 'blue'},
   title: "Container Values",
+  headerTitleStyle: {
+    color: 'white'
+  },
   headerRight: () => <DrawerToggleButton navigation={navigation}/>
 })
 if (Platform.OS === 'android') {

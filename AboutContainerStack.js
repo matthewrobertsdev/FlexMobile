@@ -19,6 +19,9 @@ let detailScreenOptionsAndroid1 = ({ navigation }) => ({
   headerShown: true,
   headerStyle: {backgroundColor: isDarkMode ? 'rgb(207,0,30)' : 'rgb(255,59,48)'},
   title: "About Learn Flex",
+  headerTitleStyle: {
+    color: 'white'
+  },
   headerRight: () => <DrawerToggleButton navigation={navigation}/>
 })
 let detailScreenOptionsiOS = ({ navigation }) => ({

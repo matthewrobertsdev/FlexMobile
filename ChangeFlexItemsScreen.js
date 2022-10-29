@@ -56,7 +56,7 @@ const ChangeFlexItemsScreen = ({navigation}) => {
   }, []);
   return (
     <SafeAreaView style={{flex: 1}}>
-      <StatusBar barStyle={'light-content'} backgroundColor={'rgb(93, 0, 255)'}/>
+      <StatusBar barStyle={'light-content'} backgroundColor={'black'}/>
       <ScrollView>
       <View style={{display: 'flex', alignItems: 'center', width: '100%'}}>
         <Text style={{fontSize: 25, color: isDarkMode ? 'white' : 'black'}}>1: flex-basis</Text>

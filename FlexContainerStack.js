@@ -32,6 +32,7 @@ let detailScreenOptionsiOS2 = ({ navigation }) => ({
 
 let detailScreenOptionsAndroid1 = ({ navigation }) => ({
   headerShown: false,
+  headerTintColor: isDarkMode ? 'white' : 'white',
   headerStyle: {backgroundColor: isDarkMode ? 'blue' : 'blue'},
   title: "",
   headerTitleStyle: {
@@ -42,6 +43,7 @@ let detailScreenOptionsAndroid1 = ({ navigation }) => ({
 
 let detailScreenOptionsAndroid2 = ({ navigation }) => ({
   headerShown: true,
+  headerTintColor: isDarkMode ? 'white' : 'white',
   headerStyle: {backgroundColor: isDarkMode ? 'blue' : 'blue'},
   title: "Container Values",
   headerTitleStyle: {

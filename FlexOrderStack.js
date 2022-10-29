@@ -17,6 +17,7 @@ export default function FlexGapStack() {
 
 let detailScreenOptionsAndroid1 = ({ navigation }) => ({
   headerShown: true,
+  headerTintColor: isDarkMode ? 'white' : 'white',
   headerStyle: {backgroundColor: 'rgb(59, 59, 147)'},
   title: "Flex Order",
   headerTitleStyle: {

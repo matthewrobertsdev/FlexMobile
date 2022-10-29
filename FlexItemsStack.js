@@ -18,6 +18,7 @@ export default function FlexItemsStack() {
 
 let detailScreenOptionsAndroid1 = ({ navigation }) => ({
   headerShown: true,
+  headerTintColor: isDarkMode ? 'white' : 'white',
   headerStyle: {backgroundColor: 'rgb(93, 0, 255)'},
   title: "Flex Order",
   headerTitleStyle: {
@@ -42,6 +43,7 @@ let detailScreenOptionsiOS2 = ({ navigation }) => ({
 
 let detailScreenOptionsAndroid2 = ({ navigation }) => ({
   headerShown: true,
+  headerTintColor: isDarkMode ? 'white' : 'white',
   headerStyle: {backgroundColor: 'rgb(93, 0, 255)'},
   title: "Item Values",
   headerTitleStyle: {

@@ -17,6 +17,7 @@ export default function FlexGapStack({navigation}) {
 
 let detailScreenOptionsAndroid1 = ({ navigation }) => ({
   headerShown: true,
+  headerTintColor: isDarkMode ? 'white' : 'white',
   headerStyle: {backgroundColor: 'rgb(0, 142, 0)'},
   title: "Flex Gap",
   headerTitleStyle: {

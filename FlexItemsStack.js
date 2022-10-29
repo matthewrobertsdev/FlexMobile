@@ -56,7 +56,7 @@ if (Platform.OS === 'android') {
     <Stack.Navigator screenOptions={{}}>
       <Stack.Screen name={"Flex Items"} component={FlexItemsScreen}
         options={detailScreenOptionsAndroid1}/>
-         <Stack.Screen name={"Flex Item Values"} component={ChangeFlexItemsScreen}
+         <Stack.Screen name={"Flex Item\' Values"} component={ChangeFlexItemsScreen}
         options={detailScreenOptionsAndroid2}/>
     </Stack.Navigator>
   );

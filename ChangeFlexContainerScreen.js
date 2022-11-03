@@ -10,6 +10,8 @@ import { SafeAreaView } from 'react-native-safe-area-context';
 import PropertyPicker from './PropertyPicker'
 import { SettingsContext } from './App';
 import { useHeaderHeight } from '@react-navigation/elements';
+import AsyncStorage from '@react-native-async-storage/async-storage';
+
 
 const flexDirectionValues=['row', 'column', 'row-reverse', 'column-reverse']
 const justifyContentValues=['flex-start', 'flex-end', 'center', 'space-between',
@@ -22,11 +24,59 @@ const alignItemsValues=['flex-start', 'flex-end', 'center', 'stretch',
 const ChangeFlexContainerScreen = ({navigation}) => {
   const [settings, setSettings] = useContext(SettingsContext);
   const isDarkMode = useColorScheme() === 'dark';
-  const [flexDirection, setFlexDirection]=useState(settings.flexDirection)
-  const [justifyContent, setJustifyContent]=useState(settings.justifyContent)
-  const [alignContent, setAlignContent]=useState(settings.alignContent)
-  const [alignItems, setAlignItems]=useState(settings.alignItems)
   const headerHeight = useHeaderHeight();
+
+  const saveFlexDirection = async (state) => {
+    try {
+      await AsyncStorage.setItem('flexDirection', state)
+    } catch (e) {
+      // saving error
+    }
+  }
+
+  const saveJustifyContent = async (state) => {
+    try {
+      await AsyncStorage.setItem('justifyContent', state)
+    } catch (e) {
+      // saving error
+    }
+  }
+
+  const saveAlignContent = async (state) => {
+    try {
+      await AsyncStorage.setItem('alignContent', state)
+    } catch (e) {
+      // saving error
+    }
+  }
+
+  const saveAlignItems = async (state) => {
+    try {
+      await AsyncStorage.setItem('alignItems', state)
+    } catch (e) {
+      // saving error
+    }
+  }
+
+  const chooseFlexDirection = (state) => {
+    saveFlexDirection(state)
+    setSettings({ ...settings, flexDirection: state })
+  }
+
+  const chooseJustifyContent = (state) => {
+    saveJustifyContent(state)
+    setSettings({ ...settings, justifyContent: state })
+  }
+
+  const chooseAlignContent = (state) => {
+    saveAlignContent(state)
+    setSettings({ ...settings, alignContent: state })
+  }
+
+  const chooseAlignItems = (state) => {
+    saveAlignItems(state)
+    setSettings({ ...settings, alignItems: state })
+  }
 
   let scrollViewTopMargin = 0
 
@@ -52,28 +102,24 @@ const ChangeFlexContainerScreen = ({navigation}) => {
       <View style={{display: 'flex', alignItems: 'center', width: '100%', 
       marginTop: 20}}>
         <Text style={{fontSize: 25, color: isDarkMode ? 'white' : 'black'}}>flex-direction:</Text>
-        <PropertyPicker properties={flexDirectionValues} selectedProperty={flexDirection}
+        <PropertyPicker properties={flexDirectionValues} selectedProperty={settings.flexDirection}
         onValueChange={(itemValue, _) => {
-          setFlexDirection(itemValue)
-          setSettings({...settings, flexDirection: itemValue})
+          chooseFlexDirection(itemValue)
           }} itemStyle={{color: pickerForegroundColor}}/>
         <Text style={{fontSize: 25, color: isDarkMode ? 'white' : 'black'}}>justify-content:</Text>
-        <PropertyPicker properties={justifyContentValues} selectedProperty={justifyContent}
+        <PropertyPicker properties={justifyContentValues} selectedProperty={settings.justifyContent}
         onValueChange={(itemValue, _) => {
-          setJustifyContent(itemValue)
-          setSettings({...settings, justifyContent: itemValue})
+          chooseJustifyContent(itemValue)
           }} itemStyle={{color: pickerForegroundColor}}/>
           <Text style={{fontSize: 25, color: isDarkMode ? 'white' : 'black'}}>align-content:</Text>
-        <PropertyPicker properties={alignContentValues} selectedProperty={alignContent}
+        <PropertyPicker properties={alignContentValues} selectedProperty={settings.alignContent}
         onValueChange={(itemValue, _) => {
-          setAlignContent(itemValue)
-          setSettings({...settings, alignContent: itemValue})
+          chooseAlignContent(itemValue)
           }} itemStyle={{color: pickerForegroundColor}}/>
           <Text style={{fontSize: 25, color: isDarkMode ? 'white' : 'black'}}>align-items:</Text>
-          <PropertyPicker properties={alignItemsValues} selectedProperty={alignItems}
+          <PropertyPicker properties={alignItemsValues} selectedProperty={settings.alignItems}
         onValueChange={(itemValue, _) => {
-          setAlignItems(itemValue)
-          setSettings({...settings, alignItems: itemValue})
+          chooseAlignItems(itemValue)
           }} itemStyle={{color: pickerForegroundColor}}/>
       </View>
       </ScrollView>

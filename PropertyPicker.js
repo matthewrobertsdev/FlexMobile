@@ -17,9 +17,9 @@ export default function PropertyPicker({properties, selectedProperty, onValueCha
   } else {
     return (
       <Picker style={{width: 250}} selectedValue={selectedProperty}
-      onValueChange={onValueChange}>
+      onValueChange={onValueChange} itemStyle={itemStyle}>
         {properties.map((property)=>{
-            return <Picker.Item label={property.toString()} value={property} key={property} color={isDarkMode ? 'lightblue' : 'blue'} style={{fontSize: 25}}/>
+            return <Picker.Item label={property.toString()} value={property} key={property} style={{fontSize: 25}}/>
           })}
       </Picker>
 )

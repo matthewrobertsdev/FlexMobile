@@ -23,6 +23,7 @@ import {
 import { SettingsContext } from './App';
 import { useHeaderHeight } from '@react-navigation/elements';
 import DrawerToggleButton from './DrawerToggleButton';
+import loadSettings from './loadSettings'
 
 
 let nums = ['1', '2abc', '3\nh', '4', '5\ni', '6def', '7']
@@ -42,6 +43,15 @@ const MainScreen = ({ navigation }) => {
   }
 
   useEffect(() => {
+    //load settings if necessary
+    if (settings === undefined) {
+      loadSettings().then(savedState => {
+        setSettings(savedState)
+        setLoaded(true)
+      })
+    } else {
+      setLoaded(true)
+    }
     if (Platform.OS==='ios') {
       navigation.setOptions({
         headerShown: true,
@@ -60,8 +70,13 @@ const MainScreen = ({ navigation }) => {
     } , 1000)
     return () => clearTimeout(timer );
   }
-  }, [navigation, loaded, isDarkMode]);
-  if (loaded || Platform.OS=='ios') {
+  }, [navigation, loaded, settings, isDarkMode]);
+  if (settings === undefined) {
+    return (
+      <View>
+      </View>
+    )
+  } else if (loaded || Platform.OS=='ios') {
   return (
     <>
       <StatusBar barStyle={'light-content'} backgroundColor={'black'}/>

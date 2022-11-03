@@ -11,7 +11,7 @@ import PropertyPicker from './PropertyPicker'
 import { SettingsContext } from './App';
 import { useHeaderHeight } from '@react-navigation/elements';
 
-const flexBasisValues=['auto', 50, 100, 150, 200, 250, 300, 350, 400, 450, 500]
+const flexBasisValues=['auto', 50, 100, 150, 200, 250, 300, 350]
 
 const flexGrowValues=[0, 1, 2, 3, 4, 5]
 

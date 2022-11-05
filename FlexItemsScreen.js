@@ -62,7 +62,7 @@
             marginTop: 15
           }}>
             <Text style={{ fontSize: 20, color: isDarkMode ? 'white' : 'black', textAlign: 'center' }}>
-              With "wrap" assigned and defined width and height, and the flex container settings applied:
+              With "wrap" assigned and defined width and height, and the flex container properties applied:
             </Text>
           </View>
           <ScrollView horizontal={true}>

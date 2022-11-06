@@ -8,9 +8,9 @@ export default function PropertyPicker({properties, selectedProperty, onValueCha
   if (Platform.OS==='ios') {
   return (
         <PickerIOS style={{width: 210}} itemStyle={itemStyle} selectedValue={selectedProperty}
-        onValueChange={onValueChange} itemStyle={itemStyle}>
+        onValueChange={onValueChange}>
           {properties.map((property)=>{
-            return <PickerIOS.Item label={property.toString()} value={property} key={property}/>
+            return <PickerIOS.Item color={isDarkMode ? 'white': 'black'} label={property.toString()} value={property} key={property}/>
           })}
         </PickerIOS>
   )

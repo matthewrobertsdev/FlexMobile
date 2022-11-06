@@ -25,22 +25,22 @@ const alignSelfValues = ['auto', 'flex-start', 'flex-end', 'center', 'stretch',
     flexShrinkFor1: 0, flexShrinkFor2abc: 0, flexShrinkFor3h: 0, alignSelfFor1: 'auto', alignSelf2abc: 'auto', 
     alignSelf3h: 'auto'}
     try {
-      const justifyContentSetting = await AsyncStorage.getItem('justifyContent')
+      const justifyContentSetting = JSON.parse(await AsyncStorage.getItem('justifyContent'))
       if(justifyContentSetting !== null && typeof justifyContentSetting === 'string' 
       && justifyContentValues.includes(justifyContentSetting)) {
         state.justifyContent=justifyContentSetting
       }
-      const alignContentSetting = await AsyncStorage.getItem('alignContent')
+      const alignContentSetting = JSON.parse(await AsyncStorage.getItem('alignContent'))
       if(alignContentSetting !== null && typeof alignContentSetting === 'string' 
       && alignContentValues.includes(alignContentSetting)) {
         state.alignContent=alignContentSetting
       }
-      const flexDirectionSetting = await AsyncStorage.getItem('flexDirection')
+      const flexDirectionSetting = JSON.parse(await AsyncStorage.getItem('flexDirection'))
       if(flexDirectionSetting !== null && typeof flexDirectionSetting === 'string' 
       && flexDirectionValues.includes(flexDirectionSetting)) {
-        state.flexDirectionSetting=flexDirectionSetting
+        state.flexDirection=flexDirectionSetting
       }
-      const alignItemsSetting = await AsyncStorage.getItem('alignItems')
+      const alignItemsSetting = JSON.parse(await AsyncStorage.getItem('alignItems'))
       if(alignItemsSetting !== null && typeof alignItemsSetting === 'string' 
       && alignItemsValues.includes(alignItemsSetting)) {
         state.alignItems=alignItemsSetting

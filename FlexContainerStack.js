@@ -9,6 +9,8 @@ import {createStackNavigator} from '@react-navigation/stack';
 import MainScreen from './MainScreen';
 import ChangeFlexContainerScreen from './ChangeFlexContainerScreen'
 import AboutFlexContainerScreen from './AboutFlexContainerScreen'
+import ContainerValueScreen from './ContainerValueScreen'
+
 
 
 import DrawerToggleButton from './DrawerToggleButton';
@@ -38,6 +40,14 @@ let detailScreenOptionsiOS3 = ({ navigation }) => ({
   headerTintColor: isDarkMode ? 'white' : 'white',
   headerStyle: {backgroundColor: isDarkMode ? 'blue' : 'blue'},
   title: "About Containers",
+  headerRight: () => <DrawerToggleButton navigation={navigation}/>
+})
+
+let detailScreenOptionsiOS4 = ({ navigation }) => ({
+  headerShown: true,
+  headerTintColor: isDarkMode ? 'white' : 'white',
+  headerStyle: {backgroundColor: isDarkMode ? 'blue' : 'blue'},
+  title: "Container Value",
   headerRight: () => <DrawerToggleButton navigation={navigation}/>
 })
 
@@ -86,6 +96,8 @@ if (Platform.OS === 'android') {
       options={detailScreenOptionsiOS2}/>
       <Stack.Screen name={"About Flex Containers"} component={AboutFlexContainerScreen}
       options={detailScreenOptionsiOS3}/>
+      <Stack.Screen name={"Change Container Value"} component={ContainerValueScreen}
+      options={detailScreenOptionsiOS4}/>
     </Stack.Navigator>
   )
 }

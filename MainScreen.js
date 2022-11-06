@@ -6,7 +6,7 @@
  * @flow strict-local
  */
 
-import React, { useContext, useEffect, useState } from 'react';
+import React, { useContext, useEffect, useState} from 'react';
 import {
   Button,
   SafeAreaView,
@@ -17,11 +17,10 @@ import {
   View,
   Image,
   Platform,
-  
+  ActivityIndicator
 } from 'react-native';
 
 import { SettingsContext } from './App';
-import { useHeaderHeight } from '@react-navigation/elements';
 import DrawerToggleButton from './DrawerToggleButton';
 import loadSettings from './loadSettings'
 
@@ -33,14 +32,6 @@ const MainScreen = ({ navigation }) => {
   const [settings, setSettings] = useContext(SettingsContext);
 
   const isDarkMode = useColorScheme() === 'dark';
-
-  const headerHeight = useHeaderHeight();
-
-  let scrollViewTopMargin = 0
-
-  if (Platform.OS === 'ios') {
-    scrollViewTopMargin = headerHeight
-  }
 
   useEffect(() => {
     //load settings if necessary
@@ -73,7 +64,8 @@ const MainScreen = ({ navigation }) => {
   }, [navigation, loaded, settings, isDarkMode]);
   if (settings === undefined) {
     return (
-      <View>
+      <View style={{display: 'flex', flex: 1, justifyContent: 'center', alignContent: 'center'}}>
+        <ActivityIndicator size="large" />
       </View>
     )
   } else if (loaded || Platform.OS=='ios') {
@@ -83,10 +75,11 @@ const MainScreen = ({ navigation }) => {
       <ScrollView>
         <View style={{
           display: 'flex', justifyContent: 'space-between', alignItems: 'center', width: '100%',
-          marginTop: +20
+          marginTop: 20
         }}>
           <View style={{ display: 'flex', alignItems: 'center', width: '100%' }}>
-            <Button title='About Flexbox Containers' color={isDarkMode ? (Platform.OS === 'ios' ? 'rgb(53,139,255)' : 'blue') : 'blue'} />
+            <Button title='About Flexbox Containers' color={isDarkMode ? (Platform.OS === 'ios' ? 'rgb(53,139,255)' : 'blue') : 'blue'}
+            onPress={() => { navigation.navigate('About Flex Containers') }} />
           </View>
           <View style={{ display: 'flex', alignItems: 'center', width: '100%', marginTop: 15 }}>
             <Button title='Change Flex Container Values' color={isDarkMode ? (Platform.OS === 'ios' ? 'rgb(53,139,255)' : 'blue') : 'blue'}

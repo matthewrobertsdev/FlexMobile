@@ -6,7 +6,7 @@
  * @flow strict-local
  */
 
- import React, {useEffect, useContext} from 'react';
+ import React, {useEffect, useState, useContext} from 'react';
  import {
    StatusBar,
    Button,
@@ -14,31 +14,56 @@
    View,
    ScrollView,
    useColorScheme,
+   ActivityIndicator
  } from 'react-native';
  import { SettingsContext } from './App';
 
  import { useHeaderHeight } from '@react-navigation/elements';
+ import loadSettings from './loadSettings'
  
  function FlexItemsScreen({navigation}) {
    const isDarkMode = useColorScheme() === 'dark';
    const [settings, setSettings] = useContext(SettingsContext);
    const headerHeight = useHeaderHeight();
-
+   const [loaded, setLoaded]=useState(false)
 
   if (Platform.OS === 'ios') {
     scrollViewTopMargin = headerHeight
   }
-   useEffect(() => {
-    if (Platform.OS === 'android') {
+  useEffect(() => {
+    //load settings if necessary
+    if (settings === undefined) {
+      loadSettings().then(savedState => {
+        setSettings(savedState)
+        setLoaded(true)
+      })
+    } else {
+      setLoaded(true)
+    }
+    if (Platform.OS==='ios') {
+      navigation.setOptions({
+        headerShown: true,
+        headerBlurEffect: 'regular',
+        headerTintColor: isDarkMode ? 'white' : 'white'
+      })
+    } else {
+    const timer=setTimeout(()=>{
+      setLoaded(true)
       navigation.setOptions({
         headerShown: true,
         headerTransparent: false,
         headerStyle: { backgroundColor: 'rgb(93, 0, 255)' },
         title: "Flex Items",
       })
-     }
-  }, []);
-  
+    } , 1000)
+    return () => clearTimeout(timer );
+  }
+  }, [navigation, loaded, settings, isDarkMode]);
+  if (settings === undefined) {
+    <View style={{display: 'flex', flex: 1, justifyContent: 'center', alignContent: 'center'}}>
+        <ActivityIndicator size="large" />
+      </View>
+  } else {
    return (
      <>
        <StatusBar barStyle={'light-content'} backgroundColor={'black'}/>
@@ -118,6 +143,7 @@
        </ScrollView>
      </>
    )
+        }
  };
  
  export default FlexItemsScreen;

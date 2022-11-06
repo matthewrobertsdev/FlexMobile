@@ -11,13 +11,11 @@
    StatusBar,
    View,
    ScrollView,
-   useColorScheme,
  } from 'react-native';
   
  import { useHeaderHeight } from '@react-navigation/elements';
  
  function FlexOrderScreen({navigation}) {
-   const isDarkMode = useColorScheme() === 'dark';
    const headerHeight = useHeaderHeight();
 
 

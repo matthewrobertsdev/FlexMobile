@@ -8,7 +8,7 @@ const alignContentValues=['flex-start', 'flex-end', 'center', 'stretch',
 const alignItemsValues=['flex-start', 'flex-end', 'center', 'stretch',
 'baseline']
 
-const flexBasisValues=[50, 100, 150, 200, 250, 300, 350]
+const flexBasisNumericalValues=[50, 100, 150, 200, 250, 300, 350]
 
 const flexGrowValues=[0, 1, 2, 3, 4, 5]
 
@@ -50,7 +50,7 @@ const alignSelfValues = ['auto', 'flex-start', 'flex-end', 'center', 'stretch',
       && flexBasisFor1Setting == 'auto') {
         state.flexBasisFor1=flexBasisFor1Setting
       } else if ( typeof flexBasisFor1Setting === 'number'
-      && flexBasisValues.includes(flexBasisFor1Setting)) {
+      && flexBasisNumericalValues.includes(flexBasisFor1Setting)) {
         state.flexBasisFor1=flexBasisFor1Setting
       }
       const flexBasisFor2abcSetting = JSON.parse(await AsyncStorage.getItem('flexBasisFor2abc'))
@@ -58,7 +58,7 @@ const alignSelfValues = ['auto', 'flex-start', 'flex-end', 'center', 'stretch',
       && flexBasisFor2abcSetting == 'auto') {
         state.flexBasisFor2abc=flexBasisFor2abcSetting
       } else if (typeof flexBasisFor2abcSetting === 'number'
-      && flexBasisValues.includes(flexBasisFor2abcSetting)) {
+      && flexBasisNumericalValues.includes(flexBasisFor2abcSetting)) {
         state.flexBasisFor2abc=flexBasisFor2abcSetting
       }
       const flexBasisFor3hSetting = JSON.parse(await AsyncStorage.getItem('flexBasisFor3h'))
@@ -66,7 +66,7 @@ const alignSelfValues = ['auto', 'flex-start', 'flex-end', 'center', 'stretch',
       && flexBasisFor3hSetting == 'auto') {
         state.flexBasisFor3h=flexBasisFor3hSetting
       } else if (typeof flexBasisFor3hSetting === 'number'
-      && flexBasisValues.includes(flexBasisFor3hSetting)) {
+      && flexBasisNumericalValues.includes(flexBasisFor3hSetting)) {
         state.flexBasisFor3h=flexBasisFor3hSetting
       }
       const flexGrowFor1Setting = JSON.parse(await AsyncStorage.getItem('flexGrowFor1'))

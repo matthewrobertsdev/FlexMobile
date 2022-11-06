@@ -6,6 +6,8 @@ import FlexGapStack from './FlexGapStack'
 import FlexOrderStack from './FlexOrderStack'
 import FlexItemsStack from './FlexItemsStack'
 import AboutContainerStack from './AboutContainerStack'
+import AboutFlexStack from './AboutFlexStack'
+
 
 const Drawer = createDrawerNavigator();
 
@@ -32,6 +34,10 @@ function DrawerComponents() {
   
   return (
     <Drawer.Navigator screenOptions={screenOptions}>
+      <Drawer.Screen name="About Flex Stack" component={AboutFlexStack}
+        options={{title: 'About FlexBox', drawerIcon: ({size}) => (
+          <DrawerIcon size={size} name='book-outline'/>
+        ),}}/>
       <Drawer.Screen name="Container Stack" component={FlexContainerStack}
         options={{title: 'Flex Container', drawerIcon: ({size}) => (
           <DrawerIcon size={size} name='square'/>

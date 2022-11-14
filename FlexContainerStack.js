@@ -1,12 +1,8 @@
-//import react
 import React from 'react';
-import { useColorScheme } from 'react-native';
 
-//import stack navigation
 import { createStackNavigator } from '@react-navigation/stack';
 
-//import pages
-import MainScreen from './MainScreen';
+import FlexContainerScreen from './FlexContainerScreen';
 import ChangeFlexContainerScreen from './ChangeFlexContainerScreen'
 import AboutFlexContainerScreen from './AboutFlexContainerScreen'
 import ContainerValueScreen from './ContainerValueScreen'
@@ -29,7 +25,7 @@ export default function FlexContainerStack() {
     <Stack.Navigator>
       <Stack.Screen
         name={'Flex Container'}
-        component={MainScreen}
+        component={FlexContainerScreen}
         options={getScreenOptionsWithTitle('Flex Container')}
       />
       <Stack.Screen name={"Flex Container Values"} component={ChangeFlexContainerScreen}

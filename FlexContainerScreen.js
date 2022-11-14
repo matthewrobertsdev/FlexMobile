@@ -28,7 +28,7 @@ import { styles } from './Styles';
 
 let nums = ['1', '2abc', '3\nh', '4', '5\ni', '6def', '7']
 
-const MainScreen = ({ navigation }) => {
+const FlexContainerScreen = ({ navigation }) => {
   const [loaded, setLoaded] = useState(false)
   const [settings, setSettings] = useContext(SettingsContext);
 
@@ -129,4 +129,4 @@ const MainScreen = ({ navigation }) => {
   }
 };
 
-export default MainScreen;
+export default FlexContainerScreen;

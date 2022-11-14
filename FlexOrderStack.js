@@ -15,7 +15,7 @@ const Stack = createStackNavigator();
 export default function FlexGapStack() {
   const isDarkMode = useColorScheme() === 'dark';
 
-let detailScreenOptionsAndroid1 = ({ navigation }) => ({
+let screenOptions = ({ navigation }) => ({
   headerShown: true,
   headerTintColor: isDarkMode ? 'white' : 'white',
   headerStyle: {backgroundColor: 'rgb(59, 59, 147)'},
@@ -25,25 +25,10 @@ let detailScreenOptionsAndroid1 = ({ navigation }) => ({
   },
   headerRight: () => <DrawerToggleButton navigation={navigation}/>
 })
-let detailScreenOptionsiOS = ({ navigation }) => ({
-  headerShown: true,
-  headerTintColor: isDarkMode ? 'white' : 'white',
-  headerStyle: {backgroundColor: 'rgb(59, 59, 147)'},
-  headerRight: () => <DrawerToggleButton navigation={navigation}/>
-})
-if (Platform.OS === 'android') {
   return (
-    <Stack.Navigator screenOptions={{}}>
+    <Stack.Navigator>
       <Stack.Screen name={"Flex Order"} component={FlexOrderScreen}
-        options={detailScreenOptionsAndroid1}/>
+        options={screenOptions}/>
     </Stack.Navigator>
   );
-} else {
-  return (
-  <Stack.Navigator screenOptions={{}}>
-      <Stack.Screen name={"Flex Order"} component={FlexOrderScreen}
-        options={detailScreenOptionsiOS}/>
-    </Stack.Navigator>
-  )
-}
 }

@@ -1,17 +1,17 @@
 {
   "images" : [
     {
-      "filename" : "LearnFlexIcon.png",
+      "filename" : "Icon.png",
       "idiom" : "universal",
       "scale" : "1x"
     },
     {
-      "filename" : "LearnFlexIcon@2x.png",
+      "filename" : "Icon@2x.png",
       "idiom" : "universal",
       "scale" : "2x"
     },
     {
-      "filename" : "LearnFlexIcon@3x.png",
+      "filename" : "Icon@3x.png",
       "idiom" : "universal",
       "scale" : "3x"
     }

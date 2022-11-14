@@ -1,73 +1,37 @@
-//import react
 import React from 'react';
-import {useColorScheme} from 'react-native';
 
-//import stack navigation
 import {createStackNavigator} from '@react-navigation/stack';
 
-//import pages
 import FlexItemsScreen from './FlexItemsScreen'
-
 import DrawerToggleButton from './DrawerToggleButton';
 import ChangeFlexItemsScreen from './ChangeFlexItemsScreen';
+import ItemValueScreen from './ItemValueScreen';
 
 const Stack = createStackNavigator();
 
 export default function FlexItemsStack() {
-  const isDarkMode = useColorScheme() === 'dark';
 
-let detailScreenOptionsAndroid1 = ({ navigation }) => ({
-  headerShown: true,
-  headerTintColor: isDarkMode ? 'white' : 'white',
-  headerStyle: {backgroundColor: 'rgb(93, 0, 255)'},
-  title: "Flex Order",
-  headerTitleStyle: {
-    color: 'white'
-  },
-  headerRight: () => <DrawerToggleButton navigation={navigation}/>
-})
-let detailScreenOptionsiOS1 = ({ navigation }) => ({
-  headerShown: true,
-  headerTintColor: isDarkMode ? 'white' : 'white',
-  headerStyle: {backgroundColor: 'rgb(93, 0, 255)'},
-  headerRight: () => <DrawerToggleButton navigation={navigation}/>
-})
+  function screenOptions(title) {
+    return ({ navigation }) => ({
+      headerShown: true,
+      headerTintColor: 'white',
+      headerStyle: {backgroundColor: 'rgb(93, 0, 255)'},
+      title: title,
+      headerTitleStyle: {
+        color: 'white'
+      },
+      headerRight: () => <DrawerToggleButton navigation={navigation}/>
+    })
+  }
 
-let detailScreenOptionsiOS2 = ({ navigation }) => ({
-  headerShown: true,
-  headerTintColor: isDarkMode ? 'white' : 'white',
-  headerStyle: {backgroundColor: 'rgb(93, 0, 255)'},
-  title: "Item Values",
-  headerRight: () => <DrawerToggleButton navigation={navigation}/>
-})
-
-let detailScreenOptionsAndroid2 = ({ navigation }) => ({
-  headerShown: true,
-  headerTintColor: isDarkMode ? 'white' : 'white',
-  headerStyle: {backgroundColor: 'rgb(93, 0, 255)'},
-  title: "Item Values",
-  headerTitleStyle: {
-    color: 'white'
-  },
-  headerRight: () => <DrawerToggleButton navigation={navigation}/>
-})
-if (Platform.OS === 'android') {
   return (
     <Stack.Navigator screenOptions={{}}>
       <Stack.Screen name={"Flex Items"} component={FlexItemsScreen}
-        options={detailScreenOptionsAndroid1}/>
-         <Stack.Screen name={"Flex Items\' Values"} component={ChangeFlexItemsScreen}
-        options={detailScreenOptionsAndroid2}/>
-    </Stack.Navigator>
-  );
-} else {
-  return (
-  <Stack.Navigator screenOptions={{}}>
-      <Stack.Screen name={"Flex Items"} component={FlexItemsScreen}
-        options={detailScreenOptionsiOS1}/>
+        options={screenOptions("Flex Items")}/>
         <Stack.Screen name={"Flex Items\' Values"} component={ChangeFlexItemsScreen}
-        options={detailScreenOptionsiOS2}/>
+        options={screenOptions("Item Values")}/>
+        <Stack.Screen name={"Change Item Value"} component={ItemValueScreen}
+        options={screenOptions("Item Value")}/>
     </Stack.Navigator>
   )
-}
 }

@@ -6,32 +6,14 @@
  * @flow strict-local
  */
 
- import React, {useEffect} from 'react';
+ import React from 'react';
  import {
    StatusBar,
    View,
    ScrollView,
  } from 'react-native';
-  
- import { useHeaderHeight } from '@react-navigation/elements';
- 
- function FlexOrderScreen({navigation}) {
-   const headerHeight = useHeaderHeight();
-
-
-  if (Platform.OS === 'ios') {
-    scrollViewTopMargin = headerHeight
-  }
-   useEffect(() => {
-    if (Platform.OS === 'android') {
-      navigation.setOptions({
-        headerShown: true,
-        headerTransparent: false,
-        headerStyle: { backgroundColor: 'rgb(59, 59, 147)' },
-        title: "Flex Order",
-      })
-     }
-  }, []);
+   
+ function FlexOrderScreen() {
   
    return (
      <>

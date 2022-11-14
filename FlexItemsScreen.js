@@ -1,11 +1,3 @@
-/**
- * Spiffy Clock Color Screen
- * https://github.com/facebook/react-native
- *
- * @format
- * @flow strict-local
- */
-
  import React, {useEffect, useState, useContext} from 'react';
  import {
    StatusBar,
@@ -20,6 +12,9 @@
 
  import { useHeaderHeight } from '@react-navigation/elements';
  import loadSettings from './loadSettings'
+import { styles } from './Styles';
+import ButtonWithMargin from './components/ButtonWithMargin';
+import SpacerView from './components/SpacerView';
  
  function FlexItemsScreen({navigation}) {
    const isDarkMode = useColorScheme() === 'dark';
@@ -40,25 +35,7 @@
     } else {
       setLoaded(true)
     }
-    if (Platform.OS==='ios') {
-      navigation.setOptions({
-        headerShown: true,
-        headerBlurEffect: 'regular',
-        headerTintColor: isDarkMode ? 'white' : 'white'
-      })
-    } else {
-    const timer=setTimeout(()=>{
-      setLoaded(true)
-      navigation.setOptions({
-        headerShown: true,
-        headerTransparent: false,
-        headerStyle: { backgroundColor: 'rgb(93, 0, 255)' },
-        title: "Flex Items",
-      })
-    } , 1000)
-    return () => clearTimeout(timer );
-  }
-  }, [navigation, loaded, settings, isDarkMode]);
+  }, [settings]);
   if (settings === undefined) {
     <View style={{display: 'flex', flex: 1, justifyContent: 'center', alignContent: 'center'}}>
         <ActivityIndicator size="large" />
@@ -68,30 +45,18 @@
      <>
        <StatusBar barStyle={'light-content'} backgroundColor={'black'}/>
        <ScrollView>
-         <View style={{flex: 1, alignItems: 'center', marginTop: 20}}>
-         <View style={{ display: 'flex', alignItems: 'center', width: '100%' }}>
-            <Button title='About Flexbox Items' color={isDarkMode ? (Platform.OS === 'ios' ? 'rgb(136, 64, 255)' : 'rgb(93, 0, 255)') : 'rgb(93, 0, 255)'} />
-          </View>
-          <View style={{ display: 'flex', alignItems: 'center', width: '100%', marginTop: 15 }}>
-            <Button title="Change Flex Items' Values" 
+         <View style={styles.containerView}>
+            <ButtonWithMargin text='About Flexbox Items' color={isDarkMode ? (Platform.OS === 'ios' ? 'rgb(136, 64, 255)' : 'rgb(93, 0, 255)') : 'rgb(93, 0, 255)'} />
+            <ButtonWithMargin text="Change Flex Items' Values" 
             color={isDarkMode ? (Platform.OS === 'ios' ? 'rgb(136, 64, 255)' : 'rgb(93, 0, 255)') : 'rgb(93, 0, 255)'}
             onPress={() => { navigation.navigate('Flex Items\' Values') }} />
-          </View>
-          <View style={{
-            display: 'flex', alignItems: 'center', width: '100%',
-            marginTop: 15
-          }}>
-          </View>
-          <View style={{
-            display: 'flex', alignItems: 'center', width: '100%',
-            marginTop: 15
-          }}>
+          <View style={styles.containerView}>
             <Text style={{ fontSize: 20, color: isDarkMode ? 'white' : 'black', textAlign: 'center' }}>
               With "wrap" assigned and defined width and height, and the flex container properties applied:
             </Text>
           </View>
           <ScrollView horizontal={true}>
-          <View style={{ display: 'flex', flex: 1, alignItems: 'center', width: '100%', marginTop: 20 }}>
+          <View style={styles.containerView}>
             <View style={{
               display: 'flex', width: 300, height: 300, flexWrap: 'wrap', flexDirection: settings.flexDirection,
               justifyContent: settings.justifyContent, alignContent: settings.alignContent, alignItems: settings.alignItems,
@@ -133,12 +98,7 @@
             </View>
           </View>
           </ScrollView>
-          <View style={{
-            display: 'flex', alignItems: 'center', width: '100%',
-            marginTop: 20
-          }}>
-          </View>
-          <View style={{height: 40}}></View>
+          <SpacerView/>
          </View>
        </ScrollView>
      </>

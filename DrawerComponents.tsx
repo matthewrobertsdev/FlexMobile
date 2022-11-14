@@ -19,15 +19,10 @@ function DrawerIcon({size, name}) {
 
 function DrawerComponents() {
   const screenOptions = {
-    //don't show drawer header
     headerShown: false,
-    //item colors
     drawerActiveTintColor: 'white',
     drawerInactiveTintColor: 'white',
     drawerStyle: {
-      //brown
-      //backgroundColor: 'rgb(128,72,44)',
-      //backgroundColor: 'rgb(255, 99, 26)'
       backgroundColor: 'rgb(255, 71, 0)'
     },
   };

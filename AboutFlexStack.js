@@ -1,5 +1,5 @@
 import React from 'react';
-import { useColorScheme } from 'react-native';
+import { Platform, useColorScheme } from 'react-native';
 
 import { createStackNavigator } from '@react-navigation/stack';
 
@@ -12,7 +12,7 @@ const Stack = createStackNavigator();
 export default function FlexGapStack() {
   const isDarkMode = useColorScheme() === 'dark';
 
-  const screenOptions = ({ navigation }) => ({
+  const iosScreenOptions = ({ navigation }) => ({
     headerShown: true,
     headerTintColor: isDarkMode ? 'white' : 'white',
     headerStyle: { backgroundColor: 'rgb(230, 136, 0)' },
@@ -22,10 +22,30 @@ export default function FlexGapStack() {
     },
     headerRight: () => <DrawerToggleButton navigation={navigation} />
   })
-  return (
-    <Stack.Navigator>
-      <Stack.Screen name={"About Flexbox"} component={AboutFlexScreen}
-        options={screenOptions} />
-    </Stack.Navigator>
-  );
+
+  const androidScreenOptions = ({ navigation }) => ({
+    headerShown: false,
+    headerTintColor: isDarkMode ? 'white' : 'white',
+    headerStyle: { backgroundColor: 'rgb(230, 136, 0)' },
+    title: "About Flex",
+    headerTitleStyle: {
+      color: 'white'
+    },
+    headerRight: () => <DrawerToggleButton navigation={navigation} />
+  })
+  if (Platform.OS === 'ios') {
+    return (
+      <Stack.Navigator>
+        <Stack.Screen name={"About Flexbox"} component={AboutFlexScreen}
+          options={iosScreenOptions} />
+      </Stack.Navigator>
+    );
+  } else {
+    return (
+      <Stack.Navigator>
+        <Stack.Screen name={"About Flexbox"} component={AboutFlexScreen}
+          options={androidScreenOptions} />
+      </Stack.Navigator>
+    );
+  }
 }

@@ -11,11 +11,15 @@
    StatusBar,
    View,
    ScrollView,
-   useColorScheme
+   useColorScheme,
+   SafeAreaView,
+   Image,
+   Text
  } from 'react-native';
 
  import { SettingsContext } from './App';
  import loadSettings from './loadSettings'
+ import DrawerToggleButton from './DrawerToggleButton'
 
 
  function AboutFlexScreen({navigation}) {
@@ -39,8 +43,8 @@
       setLoaded(true)
       navigation.setOptions({
         headerShown: true,
-        headerTitle: 'Container Properties',
-        headerStyle: { backgroundColor: isDarkMode ? 'blue' : 'blue' },
+        headerTitle: 'About Flexbox',
+        headerStyle: { backgroundColor: 'rgb(230, 136, 0)' },
         headerRight: () => <DrawerToggleButton navigation={navigation}/>,
       })
     } , 1000)

@@ -36,7 +36,7 @@ const ItemValueScreen = ({route}) => {
       <StatusBar barStyle={'light-content'} backgroundColor={'black'}/>
       <ScrollView>
         <SpacerView/>
-        <View style={styles.teachingView}>
+        <View style={styles.containerView}>
       <Text style={{fontSize: 25, color: textColor}}>{`${title}:`}</Text>
         <PropertyPicker properties={values} selectedProperty={settings[key]}
         onValueChange={(itemValue, _) => {

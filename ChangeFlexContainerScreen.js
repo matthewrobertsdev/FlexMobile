@@ -1,18 +1,12 @@
-import React, { useContext } from 'react';
+import React from 'react';
 import {
   ScrollView,
   StatusBar,
-  Text,
   View,
-  useColorScheme,
-  Platform,
-  Button
 } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
-import PropertyPicker from './PropertyPicker'
-import { SettingsContext } from './App';
-import AsyncStorage from '@react-native-async-storage/async-storage';
-import SpacerView from './components/SpacerView';
+import ButtonWithMargin from './components/ButtonWithMargin';
+
 import {styles} from './Styles'
 
 
@@ -31,52 +25,24 @@ const jsonArray = [
   { title: 'align-items', key: 'alignItems', values: alignItemsValues }
 ]
 const ChangeFlexContainerScreen = ({ navigation }) => {
-  const [settings, setSettings] = useContext(SettingsContext);
-  const isDarkMode = useColorScheme() === 'dark';
 
-  const saveValueWithKey = (key, value) => {
-    try {
-      const jsonData = JSON.stringify(value)
-      AsyncStorage.setItem(key, jsonData)
-      setSettings({ ...settings, [key]: value })
-    } catch (e) {
-      console.log(e)
-      // saving error
-    }
-  }
+  const textColor = 'blue'
 
-  const textColor = 'rgb(40, 130, 255)'
-
-  if (Platform.OS === 'ios') {
     return (
-      <ScrollView>
-        <SpacerView/>
-        {jsonArray.map((json, index) => <Button title={`Change ${json.title}`} key={index}
-          onPress={() => {
-            navigation.navigate('Change Container Value',
-              { title: json.title, key: json.key, values: json.values })
-          }} />)}
-      </ScrollView>
+      <>
+        <StatusBar barStyle={'light-content'} backgroundColor={'black'}/>
+        <SafeAreaView style={{ flex: 1 }} edges={['left', 'right']}>
+          <ScrollView>
+            <View style={styles.containerView}>
+            {jsonArray.map((json, index) => <ButtonWithMargin text={`Change ${json.title}`} key={index}
+              onPress={() => {
+                navigation.navigate('Change Container Value',
+                  { title: json.title, key: json.key, values: json.values })
+              }} color={'textColor'} />)}
+            </View>
+          </ScrollView>
+        </SafeAreaView>
+      </>
     )
-  } else {
-    return (
-      <SafeAreaView style={{ flex: 1 }}>
-        <StatusBar barStyle={'light-content'} backgroundColor={'black'} />
-        <ScrollView>
-          <View style={styles.containerView}>
-            {jsonArray.map((json, index) =>
-              <View key={index} style={styles.pickerWithTitleView}>
-                <Text style={{ fontSize: 25, color: textColor }}>{json.title}</Text>
-                <PropertyPicker properties={json.values} selectedProperty={settings[json.key]}
-                  onValueChange={(itemValue, _) => {
-                    saveValueWithKey(json.key, itemValue)
-                  }} itemStyle={{ color: isDarkMode ? 'white' : 'black' }} />
-              </View>
-            )}
-          </View>
-        </ScrollView>
-      </SafeAreaView>
-    )
-  }
 }
 export default ChangeFlexContainerScreen

@@ -38,7 +38,7 @@ const ChangeFlexContainerScreen = ({ navigation }) => {
               onPress={() => {
                 navigation.navigate('Change Container Value',
                   { title: json.title, key: json.key, values: json.values })
-              }} color={'textColor'} />)}
+              }} color={textColor} />)}
             </View>
           </ScrollView>
         </SafeAreaView>

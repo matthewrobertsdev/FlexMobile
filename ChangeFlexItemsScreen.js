@@ -1,5 +1,6 @@
 import React from 'react';
 import {
+  Platform,
   ScrollView,
   StatusBar,
   View,
@@ -31,7 +32,7 @@ const jsonArray = [
 
 const ChangeFlexItemsScreen = ({ navigation }) => {
 
-  const textColor = 'rgb(93, 0, 255)'
+  const textColor = Platform.OS === 'ios' ? 'rgb(136, 64, 255)' : 'rgb(93, 0, 255)'
 
     return (
       <>

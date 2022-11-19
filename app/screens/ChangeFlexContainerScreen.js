@@ -6,9 +6,9 @@ import {
   View,
 } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
-import ButtonWithMargin from './components/ButtonWithMargin';
+import ButtonWithMargin from '../components/ButtonWithMargin';
 
-import {styles} from './Styles'
+import {styles} from '../styles/Styles'
 
 
 const flexDirectionValues = ['row', 'column', 'row-reverse', 'column-reverse']

@@ -12,7 +12,7 @@
    View,
    ScrollView,
  } from 'react-native';
-import { styles } from './Styles';
+import { styles } from '../styles/Styles';
    
  function FlexGapScreen() {
   

@@ -8,13 +8,13 @@
    useColorScheme,
    ActivityIndicator
  } from 'react-native';
- import { SettingsContext } from './App';
+ import { SettingsContext } from '../App';
 
  import { useHeaderHeight } from '@react-navigation/elements';
- import loadSettings from './loadSettings'
-import { styles } from './Styles';
-import ButtonWithMargin from './components/ButtonWithMargin';
-import SpacerView from './components/SpacerView';
+ import loadSettings from '../utilities/loadSettings'
+import { styles } from '../styles/Styles';
+import ButtonWithMargin from '../components/ButtonWithMargin';
+import SpacerView from '../components/SpacerView';
  
  function FlexItemsScreen({navigation}) {
    const isDarkMode = useColorScheme() === 'dark';

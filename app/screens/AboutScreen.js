@@ -8,10 +8,10 @@ import {
   Image
 } from 'react-native';
 
-import ButtonWithMargin from './components/ButtonWithMargin'
-import openUrl from './utilities/openUrl'
+import ButtonWithMargin from '../components/ButtonWithMargin'
+import openUrl from '../utilities/openUrl'
 
-import {styles} from './Styles'
+import {styles} from '../styles/Styles'
 
 function AboutScreen() {
   const versionNumString = '1'
@@ -25,7 +25,7 @@ function AboutScreen() {
       <ScrollView>
         <View style={styles.containerView}>
           <Image style={styles.aboutScreenIcon}
-            source={require('./resources/Icon.png')}
+            source={require('../resources/Icon.png')}
             accessibilityLabel="Learn Flex icon" />
           <Text style={{...styles.aboutScreenText, color: textColor }}>
             Learn Flex

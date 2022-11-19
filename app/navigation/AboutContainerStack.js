@@ -3,9 +3,9 @@ import { useColorScheme } from 'react-native';
 
 import { createStackNavigator } from '@react-navigation/stack';
 
-import AboutScreen from './AboutScreen'
+import AboutScreen from '../screens/AboutScreen'
 
-import DrawerToggleButton from './DrawerToggleButton';
+import DrawerToggleButton from '../components/DrawerToggleButton';
 
 const Stack = createStackNavigator();
 

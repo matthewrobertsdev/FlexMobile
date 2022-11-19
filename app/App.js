@@ -11,7 +11,7 @@ import { useColorScheme } from 'react-native';
 
 import { NavigationContainer, DefaultTheme, DarkTheme } from '@react-navigation/native';
 
-import DrawerComponents from './DrawerComponents'
+import DrawerComponents from './navigation/DrawerComponents'
 
 export const SettingsContext = React.createContext();
 

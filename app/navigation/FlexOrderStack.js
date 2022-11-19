@@ -6,9 +6,9 @@ import {useColorScheme} from 'react-native';
 import {createStackNavigator} from '@react-navigation/stack';
 
 //import pages
-import FlexOrderScreen from './FlexOrderScreen'
+import FlexOrderScreen from '../screens/FlexOrderScreen'
 
-import DrawerToggleButton from './DrawerToggleButton';
+import DrawerToggleButton from '../components/DrawerToggleButton';
 
 const Stack = createStackNavigator();
 

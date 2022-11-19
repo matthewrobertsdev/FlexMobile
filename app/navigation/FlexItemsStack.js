@@ -2,10 +2,10 @@ import React from 'react';
 
 import {createStackNavigator} from '@react-navigation/stack';
 
-import FlexItemsScreen from './FlexItemsScreen'
-import DrawerToggleButton from './DrawerToggleButton';
-import ChangeFlexItemsScreen from './ChangeFlexItemsScreen';
-import ItemValueScreen from './ItemValueScreen';
+import FlexItemsScreen from '../screens/FlexItemsScreen'
+import ChangeFlexItemsScreen from '../screens/ChangeFlexItemsScreen';
+import ItemValueScreen from '../screens/ItemValueScreen';
+import DrawerToggleButton from '../components/DrawerToggleButton';
 
 const Stack = createStackNavigator();
 

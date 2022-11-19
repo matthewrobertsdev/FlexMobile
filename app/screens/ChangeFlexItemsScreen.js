@@ -6,8 +6,8 @@ import {
   View,
 } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
-import {styles} from './Styles'
-import ButtonWithMargin from './components/ButtonWithMargin';
+import {styles} from '../styles/Styles'
+import ButtonWithMargin from '../components/ButtonWithMargin';
 
 const flexBasisValues = ['auto', 50, 100, 150, 200, 250, 300, 350]
 const flexGrowValues = [0, 1, 2, 3, 4, 5]

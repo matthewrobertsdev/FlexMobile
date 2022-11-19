@@ -2,11 +2,11 @@ import React from 'react';
 
 import { createStackNavigator } from '@react-navigation/stack';
 
-import FlexContainerScreen from './FlexContainerScreen';
-import ChangeFlexContainerScreen from './ChangeFlexContainerScreen'
-import AboutFlexContainerScreen from './AboutFlexContainerScreen'
-import ContainerValueScreen from './ContainerValueScreen'
-import DrawerToggleButton from './DrawerToggleButton';
+import FlexContainerScreen from '../screens/FlexContainerScreen';
+import ChangeFlexContainerScreen from '../screens/ChangeFlexContainerScreen'
+import AboutFlexContainerScreen from '../screens/AboutFlexContainerScreen'
+import ContainerValueScreen from '../screens/ContainerValueScreen'
+import DrawerToggleButton from '../components/DrawerToggleButton';
 
 const Stack = createStackNavigator();
 

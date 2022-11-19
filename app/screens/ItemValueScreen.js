@@ -4,18 +4,16 @@ import {
   StatusBar,
   Text,
   View,
-  useColorScheme
 } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
-import { SettingsContext } from './App';
-import PropertyPicker from './PropertyPicker'
+import { SettingsContext } from '../App';
+import PropertyPicker from '../components/PropertyPicker'
 import AsyncStorage from '@react-native-async-storage/async-storage';
-import SpacerView from './components/SpacerView';
-import { styles } from './Styles';
+import SpacerView from '../components/SpacerView';
+import { styles } from '../styles/Styles';
 
 
-const ContainerValueScreen = ({route}) => {
-  const isDarkMode = useColorScheme() === 'dark';
+const ItemValueScreen = ({route}) => {
   const [settings, setSettings] = useContext(SettingsContext);
   const { title, key, values } = route.params;
 
@@ -30,7 +28,7 @@ const ContainerValueScreen = ({route}) => {
     }
   }
 
-  const textColor = 'rgb(40, 130, 255)'
+  const textColor = 'rgb(136, 64, 255)'
 
   return (
     <SafeAreaView edges={['left', 'right']}  style={{flex: 1}}>
@@ -42,10 +40,10 @@ const ContainerValueScreen = ({route}) => {
         <PropertyPicker properties={values} selectedProperty={settings[key]}
         onValueChange={(itemValue, _) => {
           savePropertyValueWithKey(key, itemValue)
-          }} />
+          }}/>
           </View>
       </ScrollView>
       </SafeAreaView>
   )
 }
-export default ContainerValueScreen
+export default ItemValueScreen

@@ -6,10 +6,10 @@ import {
 } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 
-import ContainerTeachingTitle from './components/ContainerTeachingTitle';
-import TeachingText from './components/TeachingText';
-import SpacerView from './components/SpacerView'
-import { styles } from './Styles';
+import ContainerTeachingTitle from '../components/ContainerTeachingTitle';
+import TeachingText from '../components/TeachingText';
+import SpacerView from '../components/SpacerView'
+import { styles } from '../styles/Styles';
 
 const AboutFlexContainerScreen = () => {
 

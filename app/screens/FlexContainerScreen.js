@@ -15,16 +15,15 @@ import {
   Text,
   useColorScheme,
   View,
-  Image,
   Platform,
   ActivityIndicator
 } from 'react-native';
 
-import { SettingsContext } from './App';
-import ButtonWithMargin from './components/ButtonWithMargin';
-import SpacerView from './components/SpacerView';
-import loadSettings from './loadSettings'
-import { styles } from './Styles';
+import { SettingsContext } from '../App';
+import ButtonWithMargin from '../components/ButtonWithMargin';
+import SpacerView from '../components/SpacerView';
+import loadSettings from '../utilities/loadSettings'
+import { styles } from '../styles/Styles';
 
 let nums = ['1', '2abc', '3\nh', '4', '5\ni', '6def', '7']
 

@@ -17,9 +17,9 @@
    Text
  } from 'react-native';
 
- import { SettingsContext } from './App';
- import loadSettings from './loadSettings'
- import DrawerToggleButton from './DrawerToggleButton'
+ import { SettingsContext } from '../App';
+ import loadSettings from '../utilities/loadSettings'
+ import DrawerToggleButton from '../components/DrawerToggleButton'
 
 
  function AboutFlexScreen({navigation}) {
@@ -69,7 +69,7 @@
       <View style={{height: 100, backgroundColor: 'rgb(255,59,48)'}}/>
       <View style={{width: '100%', height: '100%', backgroundColor: 'rgb(255,59,48)', 
       alignItems: 'center'}}>
-        <Image style={{width: 200, height: 200, marginBottom: 30}} source={require('./resources/Icon.png')}
+        <Image style={{width: 200, height: 200, marginBottom: 30}} source={require('../resources/Icon.png')}
         accessibilityLabel="Learn Flex icon"/>
         <Text style={{color: 'white', fontSize: 40}}>Learn Flex</Text>
       </View>

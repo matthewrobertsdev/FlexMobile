@@ -2,8 +2,8 @@ import React from 'react';
 
 import {createStackNavigator} from '@react-navigation/stack';
 
-import FlexGapScreen from './FlexGapScreen'
-import DrawerToggleButton from './DrawerToggleButton';
+import FlexGapScreen from '../screens/FlexGapScreen'
+import DrawerToggleButton from '../components/DrawerToggleButton';
 
 const Stack = createStackNavigator();
 

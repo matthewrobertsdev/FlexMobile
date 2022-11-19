@@ -31,7 +31,7 @@ export default function FlexContainerStack() {
       <Stack.Screen name={"Flex Container Values"} component={ChangeFlexContainerScreen}
         options={getScreenOptionsWithTitle('Container Values')} />
       <Stack.Screen name={"About Flex Containers"} component={AboutFlexContainerScreen}
-        options={getScreenOptionsWithTitle('ABout Container')} />
+        options={getScreenOptionsWithTitle('About Container')} />
       <Stack.Screen name={"Change Container Value"} component={ContainerValueScreen}
         options={getScreenOptionsWithTitle('Container Value')} />
     </Stack.Navigator>

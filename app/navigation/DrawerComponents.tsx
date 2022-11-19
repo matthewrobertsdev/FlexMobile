@@ -5,7 +5,7 @@ import FlexContainerStack from './FlexContainerStack'
 import FlexGapStack from './FlexGapStack'
 import FlexOrderStack from './FlexOrderStack'
 import FlexItemsStack from './FlexItemsStack'
-import AboutContainerStack from './AboutContainerStack'
+import AboutTheAppStack from './AboutTheAppStack'
 import AboutFlexStack from './AboutFlexStack'
 
 
@@ -49,7 +49,7 @@ function DrawerComponents() {
         options={{title: 'Flex Items', drawerIcon: ({size}) => (
           <DrawerIcon size={size} name='apps-outline'/>
         ),}}/>
-      <Drawer.Screen name="About Stack" component={AboutContainerStack}
+      <Drawer.Screen name="About Stack" component={AboutTheAppStack}
         options={{title: 'About the App', drawerIcon: ({size}) => (
           <DrawerIcon size={size} name='help-outline'/>
         ),}}/>

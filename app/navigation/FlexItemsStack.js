@@ -15,7 +15,7 @@ export default function FlexItemsStack() {
     return ({ navigation }) => ({
       headerShown: true,
       headerTintColor: 'white',
-      headerStyle: {backgroundColor: 'rgb(93, 0, 255)'},
+      headerStyle: {backgroundColor: 'rgb(109, 0, 255)'},
       title: title,
       headerTitleStyle: {
         color: 'white'

@@ -4,6 +4,7 @@ import {
   ScrollView,
   StatusBar,
   View,
+  useColorScheme,
 } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import ButtonWithMargin from '../components/ButtonWithMargin';
@@ -26,8 +27,9 @@ const jsonArray = [
   { title: 'align-items', key: 'alignItems', values: alignItemsValues }
 ]
 const ChangeFlexContainerScreen = ({ navigation }) => {
+  const isDarkMode = useColorScheme() === 'dark';
 
-  const textColor = Platform.OS === "ios" ? 'rgb(40, 130, 255)' : "blue"
+  const textColor = isDarkMode ? (Platform.OS === 'ios' ? 'rgb(53,139,255)' : 'blue') : 'blue'
 
     return (
       <>

@@ -1,9 +1,10 @@
-import React, {useEffect, useContext} from 'react';
+import React, {useContext} from 'react';
 import {
   ScrollView,
   StatusBar,
   Text,
   View,
+  useColorScheme
 } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { SettingsContext } from '../App';
@@ -16,8 +17,10 @@ import { styles } from '../styles/Styles';
 const ItemValueScreen = ({route}) => {
   const [settings, setSettings] = useContext(SettingsContext);
   const { title, key, values } = route.params;
+  const isDarkMode = useColorScheme() === 'dark';
 
   const savePropertyValueWithKey = (key, value) => {
+
     try {
       const jsonData = JSON.stringify(value)
       AsyncStorage.setItem(key, jsonData)
@@ -28,7 +31,7 @@ const ItemValueScreen = ({route}) => {
     }
   }
 
-  const textColor = 'rgb(136, 64, 255)'
+  const textColor = isDarkMode ? 'rgb(148, 84, 255)' : 'rgb(93, 0, 255)'
 
   return (
     <SafeAreaView edges={['left', 'right']}  style={{flex: 1}}>
@@ -36,7 +39,7 @@ const ItemValueScreen = ({route}) => {
       <ScrollView>
         <SpacerView/>
         <View style={styles.containerView}>
-      <Text style={{fontSize: 25, color: textColor}}>{`${title}:`}</Text>
+      <Text style={{fontSize: 25, color: textColor}}>{`${title}`}</Text>
         <PropertyPicker properties={values} selectedProperty={settings[key]}
         onValueChange={(itemValue, _) => {
           savePropertyValueWithKey(key, itemValue)

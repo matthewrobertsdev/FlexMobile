@@ -1,7 +1,6 @@
  import React, {useEffect, useState, useContext} from 'react';
  import {
    StatusBar,
-   Button,
    Text,
    View,
    ScrollView,
@@ -46,12 +45,12 @@ import SpacerView from '../components/SpacerView';
        <StatusBar barStyle={'light-content'} backgroundColor={'black'}/>
        <ScrollView>
          <View style={styles.containerView}>
-            <ButtonWithMargin text='About Flexbox Items' color={isDarkMode ? (Platform.OS === 'ios' ? 'rgb(136, 64, 255)' : 'rgb(93, 0, 255)') : 'rgb(93, 0, 255)'} />
+            <ButtonWithMargin text='About Flexbox Items' color={isDarkMode ? (Platform.OS === 'ios' ? 'rgb(148, 84, 255)' : 'rgb(93, 0, 255)') : 'rgb(93, 0, 255)'} />
             <ButtonWithMargin text="Change Flex Items' Values" 
-            color={isDarkMode ? (Platform.OS === 'ios' ? 'rgb(136, 64, 255)' : 'rgb(93, 0, 255)') : 'rgb(93, 0, 255)'}
+            color={isDarkMode ? (Platform.OS === 'ios' ? 'rgb(148, 84, 255)' : 'rgb(93, 0, 255)') : 'rgb(93, 0, 255)'}
             onPress={() => { navigation.navigate('Flex Items\' Values') }} />
           <View style={styles.containerView}>
-            <Text style={{ fontSize: 20, color: isDarkMode ? 'white' : 'black', textAlign: 'center' }}>
+            <Text style={{ fontSize: 20, color: isDarkMode ? 'white' : 'black', textAlign: 'center', marginHorizontal: 10 }}>
               With "wrap" assigned and defined width and height, and the flex container properties applied:
             </Text>
           </View>
@@ -60,11 +59,11 @@ import SpacerView from '../components/SpacerView';
             <View style={{
               display: 'flex', width: 300, height: 300, flexWrap: 'wrap', flexDirection: settings.flexDirection,
               justifyContent: settings.justifyContent, alignContent: settings.alignContent, alignItems: settings.alignItems,
-              backgroundColor: isDarkMode ? 'rgb(50,50,50)' : 'gray', borderRadius: 20
+              backgroundColor: isDarkMode ? 'rgb(242, 173, 8)' : 'rgb(255, 192, 0)', borderRadius: 20
             }}>
                 <View style={{
                   padding: 10,
-                  backgroundColor: 'rgb(93, 0, 255)', borderRadius: 10,
+                  backgroundColor: 'rgb(109, 0, 255)', borderRadius: 10,
                   justifyContent: 'center', alignItems: 'center', margin: 5, flexGrow: 1, 
                   flexBasis: settings.flexBasisFor1, flexGrow: settings.flexGrowFor1,
                   flexShrink: settings.flexShrinkFor1, alignSelf: settings.alignSelfFor1
@@ -75,7 +74,7 @@ import SpacerView from '../components/SpacerView';
                 </View>
                 <View style={{
                   padding: 10,
-                  backgroundColor: 'rgb(93, 0, 255)', borderRadius: 10,
+                  backgroundColor: 'rgb(109, 0, 255)', borderRadius: 10,
                   justifyContent: 'center', alignItems: 'center', margin: 5, 
                   flexBasis: settings.flexBasisFor2abc, flexGrow: settings.flexGrowFor2abc,
                   flexShrink: settings.flexShrinkFor2abc, alignSelf: settings.alignSelfFor2abc
@@ -86,7 +85,7 @@ import SpacerView from '../components/SpacerView';
                 </View>
                 <View style={{
                   padding: 10,
-                  backgroundColor: 'rgb(93, 0, 255)', borderRadius: 10,
+                  backgroundColor: 'rgb(109, 0, 255)', borderRadius: 10,
                   justifyContent: 'center', alignItems: 'center', margin: 5,
                   flexBasis: settings.flexBasisFor3h, flexGrow: settings.flexGrowFor3h,
                   flexShrink: settings.flexShrinkFor3h, alignSelf: settings.alignSelfFor3h

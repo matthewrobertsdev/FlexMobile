@@ -4,6 +4,7 @@ import {
   ScrollView,
   StatusBar,
   View,
+  useColorScheme
 } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import {styles} from '../styles/Styles'
@@ -31,8 +32,9 @@ const jsonArray = [
 ]
 
 const ChangeFlexItemsScreen = ({ navigation }) => {
+  const isDarkMode = useColorScheme() === 'dark';
 
-  const textColor = Platform.OS === 'ios' ? 'rgb(136, 64, 255)' : 'rgb(93, 0, 255)'
+  const textColor = isDarkMode ? (Platform.OS === 'ios' ? 'rgb(148, 84, 255)' : 'rgb(93, 0, 255)') : 'rgb(93, 0, 255)'
 
     return (
       <>

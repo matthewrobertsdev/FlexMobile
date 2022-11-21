@@ -8,7 +8,6 @@
 
 import React, { useContext, useEffect, useState } from 'react';
 import {
-  Button,
   SafeAreaView,
   ScrollView,
   StatusBar,
@@ -30,6 +29,8 @@ let nums = ['1', '2abc', '3\nh', '4', '5\ni', '6def', '7']
 const FlexContainerScreen = ({ navigation }) => {
   const [loaded, setLoaded] = useState(false)
   const [settings, setSettings] = useContext(SettingsContext);
+
+  //'rgb(242, 173, 8)' : 'rgb(255, 192, 0)',
 
   const isDarkMode = useColorScheme() === 'dark';
 
@@ -67,7 +68,7 @@ const FlexContainerScreen = ({ navigation }) => {
               display: 'flex', alignItems: 'center', width: '100%',
               marginTop: 15
             }}>
-              <Text style={{ fontSize: 20, color: isDarkMode ? 'white' : 'black', textAlign: 'center' }}>
+              <Text style={{ fontSize: 20, color: isDarkMode ? 'white' : 'black', textAlign: 'center', marginHorizontal: 10}}>
                 With "wrap" assigned and defined width and height:
               </Text>
             </View>
@@ -76,7 +77,7 @@ const FlexContainerScreen = ({ navigation }) => {
                 <View style={{
                   display: 'flex', width: 300, height: 300, flexWrap: 'wrap', flexDirection: settings.flexDirection,
                   justifyContent: settings.justifyContent, alignContent: settings.alignContent, alignItems: settings.alignItems,
-                  backgroundColor: isDarkMode ? 'rgb(50,50,50)' : 'gray', borderRadius: 20
+                  backgroundColor: isDarkMode ? 'rgb(255, 120, 0)' : 'rgb(255, 120, 0)', borderRadius: 20
                 }}>
                   {nums.map((value, index) => {
                     return <View style={{
@@ -93,7 +94,7 @@ const FlexContainerScreen = ({ navigation }) => {
               </View>
             </ScrollView>
             <View style={styles.containerView}>
-              <Text style={{ fontSize: 20, color: isDarkMode ? 'white' : 'black', textAlign: 'center' }}>
+              <Text style={{ fontSize: 20, color: isDarkMode ? 'white' : 'black', textAlign: 'center', marginHorizontal: 10}}>
                 With "nowrap" assigned and no width and no height defined:
               </Text>
             </View>
@@ -102,8 +103,33 @@ const FlexContainerScreen = ({ navigation }) => {
                 <View style={{
                   display: 'flex', flexWrap: 'nowrap', flexDirection: settings.flexDirection,
                   justifyContent: settings.justifyContent, alignContent: settings.alignContent, alignItems: settings.alignItems,
-                  backgroundColor: isDarkMode ? 'rgb(50,50,50)' : 'gray',
+                  backgroundColor: isDarkMode ? 'rgb(255, 120, 0)' : 'rgb(255, 120, 0)',
                   borderRadius: 20
+                }}>
+                  {nums.map((value, index) => {
+                    return <View style={{
+                      padding: 10,
+                      backgroundColor: isDarkMode ? 'blue' : 'blue'/*'rgb(96, 31, 159)' : 'rgb(183,84,233)'*/, borderRadius: 10,
+                      justifyContent: 'center', alignItems: 'center', margin: 5
+                    }} key={index}>
+                      <Text style={{ color: isDarkMode ? 'white' : 'white', fontSize: 20 }}>
+                        {value}
+                      </Text>
+                    </View>
+                  })}
+                </View>
+              </View>
+            </ScrollView>
+            <Text style={{ fontSize: 20, color: isDarkMode ? 'white' : 'black', textAlign: 'center', 
+            marginHorizontal: 10, marginTop: 20, marginBottom: 10}}>
+                With "wrap-reverse" assigned and defined width and height:
+              </Text>
+            <ScrollView horizontal={true}>
+              <View style={styles.containerView}>
+                <View style={{
+                  display: 'flex', width: 300, height: 300, flexWrap: 'wrap-reverse', flexDirection: settings.flexDirection,
+                  justifyContent: settings.justifyContent, alignContent: settings.alignContent, alignItems: settings.alignItems,
+                  backgroundColor: isDarkMode ? 'rgb(255, 120, 0)' : 'rgb(255, 120, 0)', borderRadius: 20
                 }}>
                   {nums.map((value, index) => {
                     return <View style={{

@@ -7,9 +7,8 @@ import {
 
 function TeachingTitle(props) {
   return (
-    <View backgroundColor={props.backgroundColor} style={{ padding: 10, borderRadius: 20, 
-    margin: 30 }}>
-      <Text style={{ fontSize: 25, color: 'white' }}>{props.children}</Text>
+    <View style={{ margin: 20 }}>
+      <Text style={{ fontSize: 25, color: props.color}}>{props.children}</Text>
     </View>
   );
 }

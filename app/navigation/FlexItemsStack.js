@@ -5,6 +5,7 @@ import {createStackNavigator} from '@react-navigation/stack';
 import FlexItemsScreen from '../screens/FlexItemsScreen'
 import ChangeFlexItemsScreen from '../screens/ChangeFlexItemsScreen';
 import ItemValueScreen from '../screens/ItemValueScreen';
+import AboutFlexItemsScreen from '../screens/AboutFlexItemsScreen';
 import DrawerToggleButton from '../components/DrawerToggleButton';
 
 const Stack = createStackNavigator();
@@ -32,6 +33,8 @@ export default function FlexItemsStack() {
         options={screenOptions("Item Values")}/>
         <Stack.Screen name={"Change Item Value"} component={ItemValueScreen}
         options={screenOptions("Item Value")}/>
+        <Stack.Screen name={"Abouts Flex Items"} component={AboutFlexItemsScreen}
+        options={screenOptions("About Items")}/>
     </Stack.Navigator>
   )
 }

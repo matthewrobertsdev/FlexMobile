@@ -5,7 +5,8 @@
    View,
    ScrollView,
    useColorScheme,
-   ActivityIndicator
+   ActivityIndicator,
+   SafeAreaView
  } from 'react-native';
  import { SettingsContext } from '../App';
 
@@ -43,9 +44,12 @@ import SpacerView from '../components/SpacerView';
    return (
      <>
        <StatusBar barStyle={'light-content'} backgroundColor={'black'}/>
+       <SafeAreaView edgees={["left", "right"]}>
        <ScrollView>
          <View style={styles.containerView}>
-            <ButtonWithMargin text='About Flexbox Items' color={isDarkMode ? (Platform.OS === 'ios' ? 'rgb(148, 84, 255)' : 'rgb(93, 0, 255)') : 'rgb(93, 0, 255)'} />
+            <ButtonWithMargin text='About Flexbox Items' 
+            color={isDarkMode ? (Platform.OS === 'ios' ? 'rgb(148, 84, 255)' : 'rgb(93, 0, 255)') : 'rgb(93, 0, 255)'} 
+            onPress={() => { navigation.navigate('Abouts Flex Items') }}/>
             <ButtonWithMargin text="Change Flex Items' Values" 
             color={isDarkMode ? (Platform.OS === 'ios' ? 'rgb(148, 84, 255)' : 'rgb(93, 0, 255)') : 'rgb(93, 0, 255)'}
             onPress={() => { navigation.navigate('Flex Items\' Values') }} />
@@ -68,7 +72,7 @@ import SpacerView from '../components/SpacerView';
                   flexBasis: settings.flexBasisFor1, flexGrow: settings.flexGrowFor1,
                   flexShrink: settings.flexShrinkFor1, alignSelf: settings.alignSelfFor1
                 }} key={'1'}>
-                  <Text style={{ color: isDarkMode ? 'white' : 'white', fontSize: 20 }}>
+                  <Text style={{ color: 'white', fontSize: 20 }}>
                     {'1'}
                   </Text>
                 </View>
@@ -79,7 +83,7 @@ import SpacerView from '../components/SpacerView';
                   flexBasis: settings.flexBasisFor2abc, flexGrow: settings.flexGrowFor2abc,
                   flexShrink: settings.flexShrinkFor2abc, alignSelf: settings.alignSelfFor2abc
                 }} key={'2abc'}>
-                  <Text style={{ color: isDarkMode ? 'white' : 'white', fontSize: 20 }}>
+                  <Text style={{ color: 'white', fontSize: 20 }}>
                     {'2abc'}
                   </Text>
                 </View>
@@ -90,7 +94,7 @@ import SpacerView from '../components/SpacerView';
                   flexBasis: settings.flexBasisFor3h, flexGrow: settings.flexGrowFor3h,
                   flexShrink: settings.flexShrinkFor3h, alignSelf: settings.alignSelfFor3h
                 }} key={'3\nh'}>
-                  <Text style={{ color: isDarkMode ? 'white' : 'white', fontSize: 20 }}>
+                  <Text style={{ color: 'white', fontSize: 20 }}>
                     {'3\nh'}
                   </Text>
                 </View>
@@ -100,6 +104,7 @@ import SpacerView from '../components/SpacerView';
           <SpacerView/>
          </View>
        </ScrollView>
+       </SafeAreaView>
      </>
    )
         }

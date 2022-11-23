@@ -27,9 +27,11 @@ const AboutFlexItemsScreen = () => {
           <ItemsTeachingTitle>flex-basis</ItemsTeachingTitle>
           <TeachingText>
           "flex-basis" is how much space an item will take up if left alone.  In web development, an item's
-          "flex-basis" unit unit can be any size unit, but in other frameworks, the units may be more 
-          limited.  For example, in React Native, with which this app is coded, "flex-basis" should 
-          be either a unitless number, (if you are specifiying pixels), or a percent.
+          "flex-basis" unit unit can be any size unit or "auto", but in other frameworks, the units may 
+          be more limited.  For example, in React Native, with which this app is coded, "flex-basis" 
+          should be either a unitless number, (if you are specifiying pixels), a percent, or the string 
+          "auto".  It is "auto" by default, and "auto" will just make it use its intrinsic size, (think, 
+          for example, of the size determined by text plus padding)
           </TeachingText>
           <ItemsTeachingTitle>flex-grow</ItemsTeachingTitle>
           <TeachingText>

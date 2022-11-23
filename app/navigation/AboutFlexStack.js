@@ -25,7 +25,7 @@ export default function FlexGapStack() {
 
   const androidScreenOptions = ({ navigation }) => ({
     headerShown: false,
-    headerTintColor: isDarkMode ? 'white' : 'white',
+    headerTintColor: 'white',
     headerStyle: { backgroundColor: 'rgb(230, 136, 0)' },
     title: "About Flex",
     headerTitleStyle: {

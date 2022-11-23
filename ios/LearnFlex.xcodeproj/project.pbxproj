@@ -14,6 +14,7 @@
 		65727FFAC40728B40D5858CC /* libPods-LearnFlex-LearnFlexTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = FE3925ABDC60ADB7A4233D9A /* libPods-LearnFlex-LearnFlexTests.a */; };
 		768394DD03943E3CFE5F1DE6 /* libPods-LearnFlex.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 150F35FCF61BE21516AC06B3 /* libPods-LearnFlex.a */; };
 		81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */; };
+		9F73F391292EB0D40015C477 /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9F73F390292EB0D40015C477 /* Colors.xcassets */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -43,6 +44,7 @@
 		81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = LaunchScreen.storyboard; path = LearnFlex/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		9937042E127F5645D4C51BC9 /* Pods-LearnFlex-LearnFlexTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LearnFlex-LearnFlexTests.release.xcconfig"; path = "Target Support Files/Pods-LearnFlex-LearnFlexTests/Pods-LearnFlex-LearnFlexTests.release.xcconfig"; sourceTree = "<group>"; };
 		9F5E040C289ED3C70046A5D2 /* Ionicons.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = Ionicons.ttf; path = "../node_modules/react-native-vector-icons/Fonts/Ionicons.ttf"; sourceTree = "<group>"; };
+		9F73F390292EB0D40015C477 /* Colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Colors.xcassets; sourceTree = "<group>"; };
 		9FF5E1A22918549200EC6FEB /* LearnFlex.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; name = LearnFlex.entitlements; path = LearnFlex/LearnFlex.entitlements; sourceTree = "<group>"; };
 		ED297162215061F000B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
 		FE3925ABDC60ADB7A4233D9A /* libPods-LearnFlex-LearnFlexTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-LearnFlex-LearnFlexTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -96,6 +98,7 @@
 				13B07FB61A68108700A75B9A /* Info.plist */,
 				81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */,
 				13B07FB71A68108700A75B9A /* main.m */,
+				9F73F390292EB0D40015C477 /* Colors.xcassets */,
 			);
 			name = LearnFlex;
 			sourceTree = "<group>";
@@ -246,6 +249,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9F73F391292EB0D40015C477 /* Colors.xcassets in Resources */,
 				81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */,
 				13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */,
 			);

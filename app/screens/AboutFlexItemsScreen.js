@@ -26,22 +26,38 @@ const AboutFlexItemsScreen = () => {
           </TeachingText>
           <ItemsTeachingTitle>flex-basis</ItemsTeachingTitle>
           <TeachingText>
-          "flex-basis" is how much space an item will take up if left alone.
+          "flex-basis" is how much space an item will take up if left alone.  In web development, an item's
+          "flex-basis" unit unit can be any size unit, but in other frameworks, the units may be more 
+          limited.  For example, in React Native, with which this app is coded, "flex-basis" should 
+          be either a unitless number, (if you are specifiying pixels), or a percent.
           </TeachingText>
           <ItemsTeachingTitle>flex-grow</ItemsTeachingTitle>
           <TeachingText>
           "flex-grow" is how much an item will tend to grow relative to other items along the axis specified
-          by the flex container's "flex-direction".
+          by the flex container's "flex-direction".  If there is extra space in the row or column, flexbox
+          will distribute this extra space proportionally to each individual flex item according to their 
+          "flex-grow" values.  If "flex-grow" is assigned 0 (or left alone), the flex item will not grow.
+          Valid "flex-grow" values are numbers.
           </TeachingText>
           <ItemsTeachingTitle>flex-shrink</ItemsTeachingTitle>
           <TeachingText>
-          "flex-shrink" determines to what degree an element will shrink to fit this main axis if 
-          it's "flex-basis" would make it too large for the main axis.
+          "flex-shrink" determines to what degree an element will shrink to fit the main axis if 
+          it would otherwise be too large for the main axis.  Flexbox will shrink items proportionally 
+          relative to each other's"flex-shrink" so that they fit in the axis, if possible.  Valid 
+          "flex-shrink" values are numbers.
           </TeachingText>
           <ItemsTeachingTitle>align-self</ItemsTeachingTitle>
           <TeachingText>
           "align-self" let's you essentially override the "align-items" property of the container
-          for an individual view or element.
+          for an individual view or element.  "align-self" determines how your item in your 
+          flex container is laid out perpendicular to the axis determined by "flex-direction" 
+          but within that row or column.  "flex-start" will make the item aligned at the start 
+          of that perpendicular axis within the row or column.  "flex-end" will make the item aligned 
+          at the end of that perpendicular axis within the row or column.  "center" will make the item
+          aligned along the center of the perpendicular axis of the row or column. "stretch" makes the 
+          items fill the entire height of the row or width of the column. "baseline" aligns the items 
+          "baslines" with the row or column (think aligning with the baseline of the item's text or 
+          similar content).
           </TeachingText>
         </View>
         <SpacerView />

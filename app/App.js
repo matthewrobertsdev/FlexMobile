@@ -17,6 +17,7 @@ export const SettingsContext = React.createContext();
 
 const App = () => {
   const isDarkMode = useColorScheme() === 'dark';
+  //DarkTheme.colors.background = "rgb(29, 29, 29)"
   const theme = isDarkMode ? DarkTheme : DefaultTheme
   const [settings, setSettings] = useState(undefined)
   return (

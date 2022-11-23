@@ -71,7 +71,7 @@ const AboutFlexContainerScreen = () => {
             make it all aligned at the end of that perpendicular axis within the row or column.  "center"
             will make it aligned along the center of the perpendicular axis of the row or column. "stretch"
             makes the items fill the entire height of the row or width of the column. "baseline"
-            aligns the items "baslines" (think aligning along the baseline of their text or similar content)
+            aligns the items "baslines" (think aligning along the baseline of their text or similar content).
           </TeachingText>
         </View>
         <SpacerView />

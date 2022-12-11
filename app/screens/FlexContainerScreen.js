@@ -53,8 +53,8 @@ const FlexContainerScreen = ({ navigation }) => {
   } else {
     return (
       <>
+      <SafeAreaView edges={["left", "right"]}>
         <StatusBar barStyle={'light-content'} backgroundColor={'black'} />
-        <SafeAreaView edges={["left", "right"]}>
         <ScrollView>
           <View style={{
             display: 'flex', justifyContent: 'space-between', alignItems: 'center', width: '100%',

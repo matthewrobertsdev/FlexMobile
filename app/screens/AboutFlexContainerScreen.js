@@ -24,6 +24,15 @@ const AboutFlexContainerScreen = () => {
             towards using flex is simply to assign "flex" to the "display" style property.  This will make the container
             a flexbox container so that you can use flexbox for determining how the views are arranged in the container.
           </TeachingText>
+          <ContainerTeachingTitle>accessibility</ContainerTeachingTitle>
+          <TeachingText>
+            For any of the values that reverse the order of the items visually, please note that,
+            because the source order of the items is not changed and the order is only changed visually,
+            screen readers that read aloud the contents of the container will read them aloud in source
+            order, as opposed to the order determined by these properties.  Therefore, be careful
+            if you choose to use any of the values that reverse the direction of the flex container
+            as they may interfere with the accessibility of your app or webpage.
+          </TeachingText>
           <ContainerTeachingTitle>flex-wrap</ContainerTeachingTitle>
           <TeachingText>
             If your flex container view has a size assigned to it, such as from assigning it a width and a height,

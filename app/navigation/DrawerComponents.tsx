@@ -41,13 +41,13 @@ function DrawerComponents() {
         options={{title: 'Flex Gap', drawerIcon: ({size}) => (
           <DrawerIcon size={size} name='grid-outline'/>
         ),}}/>
-        <Drawer.Screen name="Order Stack" component={FlexOrderStack}
-        options={{title: 'Flex Order', drawerIcon: ({size}) => (
-          <DrawerIcon size={size} name='ellipsis-horizontal-outline'/>
-        ),}}/>
         <Drawer.Screen name="Flex Items Stack" component={FlexItemsStack}
         options={{title: 'Flex Items', drawerIcon: ({size}) => (
           <DrawerIcon size={size} name='apps-outline'/>
+        ),}}/>
+        <Drawer.Screen name="Order Stack" component={FlexOrderStack}
+        options={{title: 'Flex Order', drawerIcon: ({size}) => (
+          <DrawerIcon size={size} name='ellipsis-horizontal-outline'/>
         ),}}/>
       <Drawer.Screen name="About Stack" component={AboutTheAppStack}
         options={{title: 'About the App', drawerIcon: ({size}) => (

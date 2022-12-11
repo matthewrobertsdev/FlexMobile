@@ -14,7 +14,8 @@ import openUrl from '../utilities/openUrl'
 import {styles} from '../styles/Styles'
 
 function AboutScreen() {
-  const versionNumString = '1'
+  const versionString = '1.0'
+  const versionNumString = '3'
   const isDarkMode = useColorScheme() === 'dark';
   const textColor = isDarkMode ? 'white' : 'black'
   const buttonColor = isDarkMode ? 'rgb(255,52,52)' : 'rgb(255,59,48)'
@@ -31,7 +32,7 @@ function AboutScreen() {
             Learn Flex
           </Text>
           <Text style={{...styles.aboutScreenText, color: textColor }}>
-            Version 1.0 ({versionNumString})
+            Version {versionString} ({versionNumString})
           </Text>
           <Text style={{...styles.aboutScreenText, color: textColor }}>
             {'Copyright © 2022 Matt Roberts.  \nAll rights reserved.'}

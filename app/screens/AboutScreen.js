@@ -15,7 +15,7 @@ import {styles} from '../styles/Styles'
 
 function AboutScreen() {
   const versionString = '1.0'
-  const versionNumString = '3'
+  const versionNumString = '4'
   const isDarkMode = useColorScheme() === 'dark';
   const textColor = isDarkMode ? 'white' : 'black'
   const buttonColor = isDarkMode ? 'rgb(255,52,52)' : 'rgb(255,59,48)'

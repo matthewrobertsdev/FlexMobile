@@ -1,12 +1,14 @@
-import React from 'react';
+import React, {useContext} from 'react';
 import {
   Platform,
   ScrollView,
   StatusBar,
   View,
   useColorScheme,
+  Text
 } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
+import { SettingsContext } from '../App';
 import ButtonWithMargin from '../components/ButtonWithMargin';
 
 import {styles} from '../styles/Styles'
@@ -27,6 +29,7 @@ const jsonArray = [
   { title: 'align-items', key: 'alignItems', values: alignItemsValues }
 ]
 const ChangeFlexContainerScreen = ({ navigation }) => {
+  const [settings] = useContext(SettingsContext);
   const isDarkMode = useColorScheme() === 'dark';
 
   const textColor = isDarkMode ? (Platform.OS === 'ios' ? 'rgb(53,139,255)' : 'blue') : 'blue'
@@ -37,11 +40,16 @@ const ChangeFlexContainerScreen = ({ navigation }) => {
         <SafeAreaView style={{ flex: 1 }} edges={['left', 'right']}>
           <ScrollView>
             <View style={styles.containerView}>
-            {jsonArray.map((json, index) => <ButtonWithMargin text={`Change ${json.title}`} key={index}
+            {jsonArray.map((json, index) => <View  key={index}>
+              <Text style={{ fontSize: 20, color: isDarkMode ? 'white' : 'black', textAlign: 'center', marginHorizontal: 10}}>
+                {json.title}: {settings[json.key]}
+              </Text>
+              <ButtonWithMargin text={`Change ${json.title}`}
               onPress={() => {
                 navigation.navigate('Change Container Value',
                   { title: json.title, key: json.key, values: json.values })
-              }} color={textColor} />)}
+              }} color={textColor} />
+              </View>)}
             </View>
           </ScrollView>
         </SafeAreaView>

@@ -8,7 +8,7 @@ export const styles = StyleSheet.create({
     fontSize: 20, margin: 7.5, textAlign: 'center'
   },
   containerView: {
-    display: 'flex', alignItems: 'center', width: '100%', marginTop: 20
+    display: 'flex', alignItems: 'center', width: '100%', marginVertical: 20
   },
   pickerWithTitleView: {
     display: 'flex', flex: 1, justifyContent: 'center', alignItems: 'center', width: '100%'

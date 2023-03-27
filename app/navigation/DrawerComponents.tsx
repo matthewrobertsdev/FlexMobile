@@ -23,8 +23,10 @@ function DrawerComponents() {
     drawerActiveTintColor: 'white',
     drawerInactiveTintColor: 'white',
     drawerStyle: {
-      backgroundColor: 'rgb(255, 71, 0)'
+      backgroundColor: 'rgb(255, 71, 0)',
+      width: 225
     },
+    drawerType: 'permanent'
   };
   
   return (

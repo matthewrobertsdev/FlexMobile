@@ -7,7 +7,7 @@ import FlexOrderStack from './FlexOrderStack'
 import FlexItemsStack from './FlexItemsStack'
 import AboutTheAppStack from './AboutTheAppStack'
 import AboutFlexStack from './AboutFlexStack'
-
+import {useWindowDimensions} from 'react-native';
 
 const Drawer = createDrawerNavigator();
 
@@ -18,15 +18,17 @@ function DrawerIcon({size, name}) {
 }
 
 function DrawerComponents() {
+  const {height, width} = useWindowDimensions();
+
   const screenOptions = {
     headerShown: false,
     drawerActiveTintColor: 'white',
     drawerInactiveTintColor: 'white',
     drawerStyle: {
       backgroundColor: 'rgb(255, 71, 0)',
-      width: 225
+      width: (width < 500 || width > 1000) ? 225 : 300
     },
-    drawerType: 'permanent'
+    drawerType: width > 1050 ? 'permanent' : 'front'
   };
   
   return (

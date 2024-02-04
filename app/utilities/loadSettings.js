@@ -8,9 +8,9 @@ const alignContentValues = ['flex-start', 'flex-end', 'center', 'stretch',
 const alignItemsValues = ['flex-start', 'flex-end', 'center', 'stretch',
   'baseline']
 
-const flexBasisNumericalValues = ["auto", 50, 100, 150, 200, 250, 300, 350]
-const flexGrowValues = [0, 1, 2, 3, 4, 5]
-const flexShrinkValues = [0, 1, 2, 3, 4, 5]
+const flexBasisNumericalValues = ["auto", "50", "100", "150", "200", "250", "300", "350"]
+const flexGrowValues = ["0", "1", "2", "3", "4", "5"]
+const flexShrinkValues = ["0", "1", "2", "3", "4", "5"]
 const alignSelfValues = ['auto', 'flex-start', 'flex-end', 'center', 'stretch',
   'baseline']
 

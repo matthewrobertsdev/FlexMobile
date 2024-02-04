@@ -77,7 +77,7 @@ const FlexContainerScreen = ({ navigation }) => {
                 <View style={{
                   display: 'flex', width: 300, height: 300, flexWrap: 'wrap', flexDirection: settings.flexDirection,
                   justifyContent: settings.justifyContent, alignContent: settings.alignContent, alignItems: settings.alignItems,
-                  backgroundColor: isDarkMode ? 'rgb(255, 120, 0)' : 'rgb(255, 120, 0)', borderRadius: 20
+                  backgroundColor: isDarkMode ? 'rgb(242, 173, 8)' : 'rgb(255, 192, 0)', borderRadius: 20
                 }}>
                   {nums.map((value, index) => {
                     return <View style={{
@@ -103,7 +103,7 @@ const FlexContainerScreen = ({ navigation }) => {
                 <View style={{
                   display: 'flex', flexWrap: 'nowrap', flexDirection: settings.flexDirection,
                   justifyContent: settings.justifyContent, alignContent: settings.alignContent, alignItems: settings.alignItems,
-                  backgroundColor: isDarkMode ? 'rgb(255, 120, 0)' : 'rgb(255, 120, 0)',
+                  backgroundColor: isDarkMode ? 'rgb(242, 173, 8)' : 'rgb(255, 192, 0)',
                   borderRadius: 20
                 }}>
                   {nums.map((value, index) => {
@@ -129,7 +129,7 @@ const FlexContainerScreen = ({ navigation }) => {
                 <View style={{
                   display: 'flex', width: 300, height: 300, flexWrap: 'wrap-reverse', flexDirection: settings.flexDirection,
                   justifyContent: settings.justifyContent, alignContent: settings.alignContent, alignItems: settings.alignItems,
-                  backgroundColor: isDarkMode ? 'rgb(255, 120, 0)' : 'rgb(255, 120, 0)', borderRadius: 20
+                  backgroundColor: isDarkMode ? 'rgb(242, 173, 8)' : 'rgb(255, 192, 0)', borderRadius: 20
                 }}>
                   {nums.map((value, index) => {
                     return <View style={{

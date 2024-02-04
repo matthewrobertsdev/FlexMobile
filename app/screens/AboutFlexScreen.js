@@ -46,7 +46,7 @@
       navigation.setOptions({
         headerShown: true,
         headerTitle: 'About Flexbox',
-        headerStyle: { backgroundColor: 'rgb(230, 136, 0)' },
+        headerStyle: { backgroundColor: 'rgb(232, 111, 23)' },
         headerRight: () => <DrawerToggleButton navigation={navigation}/>,
       })
     } , 1000)

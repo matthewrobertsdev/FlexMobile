@@ -15,8 +15,8 @@ export default function FlexGapStack() {
   const iosScreenOptions = ({ navigation }) => ({
     headerShown: true,
     headerTintColor: isDarkMode ? 'white' : 'white',
-    headerStyle: { backgroundColor: 'rgb(230, 136, 0)' },
-    title: "About Flex",
+    headerStyle: { backgroundColor: 'rgb(232, 111, 23)' },
+    title: "About Flexbox",
     headerTitleStyle: {
       color: 'white'
     },
@@ -26,8 +26,8 @@ export default function FlexGapStack() {
   const androidScreenOptions = ({ navigation }) => ({
     headerShown: false,
     headerTintColor: 'white',
-    headerStyle: { backgroundColor: 'rgb(230, 136, 0)' },
-    title: "About Flex",
+    headerStyle: { backgroundColor: 'rgb(232, 111, 23)' },
+    title: "About Flexbox",
     headerTitleStyle: {
       color: 'white'
     },

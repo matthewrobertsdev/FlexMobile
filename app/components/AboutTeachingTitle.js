@@ -11,7 +11,7 @@ function AboutTeachingTitle(props) {
   const isDarkMode = useColorScheme() === 'dark';
   return (
     <TeachingTitle style={{ display: "flex", alignItmes: "center", width: "100%" }}
-      color={isDarkMode ? 'rgb(230, 136, 0)' : 'rgb(230, 136, 0)'}>
+      color={isDarkMode ? 'rgb(232, 111, 23)' : 'rgb(232, 111, 23)'}>
       {props.children}
     </TeachingTitle>
   );

@@ -13,6 +13,13 @@ import AsyncStorage from '@react-native-async-storage/async-storage';
 import SpacerView from '../components/SpacerView';
 import { styles } from '../styles/Styles';
 
+function getNumIfPossible(value) {
+  if (isNaN(value)) {
+    return value
+  } else {
+    return parseFloat(value)
+  }
+}
 
 const ItemValueScreen = ({route}) => {
   const [settings, setSettings] = useContext(SettingsContext);
@@ -24,7 +31,7 @@ const ItemValueScreen = ({route}) => {
     try {
       const jsonData = JSON.stringify(value)
       AsyncStorage.setItem(key, jsonData)
-      setSettings({ ...settings, [key]: value })
+      setSettings({ ...settings, [key]: getNumIfPossible(value) })
     } catch (e) {
       console.log(e)
       // saving error

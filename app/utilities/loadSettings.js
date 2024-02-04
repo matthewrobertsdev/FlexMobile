@@ -14,6 +14,14 @@ const flexShrinkValues = [0, 1, 2, 3, 4, 5]
 const alignSelfValues = ['auto', 'flex-start', 'flex-end', 'center', 'stretch',
   'baseline']
 
+  function getNumIfPossible(value) {
+    if (isNaN(value)) {
+      return value
+    } else {
+      return parseFloat(value)
+    }
+  }
+
 const loadSettings = async () => {
   let state = {
     justifyContent: 'flex-start', alignContent: 'flex-start',
@@ -42,53 +50,53 @@ const loadSettings = async () => {
     }
     const flexBasisFor1Setting = JSON.parse(await AsyncStorage.getItem('flexBasisFor1'))
     if (flexBasisFor1Setting !== null && flexBasisFor1Setting !== undefined && flexBasisNumericalValues.includes(flexBasisFor1Setting)) {
-      state.flexBasisFor1 = flexBasisFor1Setting
+      state.flexBasisFor1 = getNumIfPossible(flexBasisFor1Setting)
     }
     const flexBasisFor2abcSetting = JSON.parse(await AsyncStorage.getItem('flexBasisFor2abc'))
     if (flexBasisFor2abcSetting !== null && flexBasisFor2abcSetting !== undefined
       && flexBasisNumericalValues.includes(flexBasisFor2abcSetting)) {
-      state.flexBasisFor2abc = flexBasisFor2abcSetting
+      state.flexBasisFor2abc = getNumIfPossible(flexBasisFor2abcSetting)
     }
     const flexBasisFor3hSetting = JSON.parse(await AsyncStorage.getItem('flexBasisFor3h'))
     if (flexBasisFor3hSetting !== null && flexBasisFor3hSetting !== undefined && flexBasisNumericalValues.includes(flexBasisFor3hSetting)) {
-      state.flexBasisFor3h = flexBasisFor3hSetting
+      state.flexBasisFor3h = getNumIfPossible(flexBasisFor3hSetting)
     }
     const flexGrowFor1Setting = JSON.parse(await AsyncStorage.getItem('flexGrowFor1'))
     if (flexGrowFor1Setting !== null && flexGrowFor1Setting !== undefined && flexGrowValues.includes(flexGrowFor1Setting)) {
-      state.flexGrowFor1 = flexGrowFor1Setting
+      state.flexGrowFor1 = getNumIfPossible(flexGrowFor1Setting)
     }
     const flexGrowFor2abcSetting = JSON.parse(await AsyncStorage.getItem('flexGrowFor2abc'))
     if (flexGrowFor2abcSetting !== null && flexGrowFor2abcSetting !== undefined && flexGrowValues.includes(flexGrowFor2abcSetting)) {
-      state.flexGrowFor2abc = flexGrowFor2abcSetting
+      state.flexGrowFor2abc = getNumIfPossible(flexGrowFor2abcSetting)
     }
     const flexGrowFor3hSetting = JSON.parse(await AsyncStorage.getItem('flexGrowFor3h'))
     if (flexGrowFor3hSetting !== null && flexGrowFor3hSetting !== undefined && flexGrowValues.includes(flexGrowFor3hSetting)) {
-      state.flexGrowFor3h = flexGrowFor3hSetting
+      state.flexGrowFor3h = getNumIfPossible(flexGrowFor3hSetting)
     }
     const flexShrinkFor1Setting = JSON.parse(await AsyncStorage.getItem('flexShrinkFor1'))
     if (flexShrinkFor1Setting !== null && flexShrinkFor1Setting !== undefined && flexShrinkValues.includes(flexShrinkFor1Setting)) {
-      state.flexShrinkFor1 = flexGrowFor1Setting
+      state.flexShrinkFor1 = getNumIfPossible(flexGrowFor1Setting)
     }
     const flexShrinkFor2abcSetting = JSON.parse(await AsyncStorage.getItem('flexShrinkFor2abc'))
     if (flexShrinkFor2abcSetting !== null && flexShrinkFor2abcSetting !== undefined && flexShrinkValues.includes(flexShrinkFor2abcSetting)) {
-      state.flexShrinkFor2abc = flexShrinkFor2abcSetting
+      state.flexShrinkFor2abc = getNumIfPossible(flexShrinkFor2abcSetting)
     }
     const flexShrinkFor3hSetting = JSON.parse(await AsyncStorage.getItem('flexShrinkFor3h'))
     if (flexShrinkFor3hSetting !== null && flexShrinkFor3hSetting !== undefined && flexShrinkValues.includes(flexShrinkFor3hSetting)) {
-      state.flexShrinkFor3h = flexShrinkFor3hSetting
+      state.flexShrinkFor3h = getNumIfPossible(flexShrinkFor3hSetting)
     }
     const alignSelfFor1Setting = await AsyncStorage.getItem('alignSelfFor1')
     if (alignSelfFor1Setting !== null && alignSelfFor1Setting !== undefined && alignSelfValues.includes(alignSelfFor1Setting)) {
-      state.alignSelfFor1 = alignSelfFor1Setting
+      state.alignSelfFor1 =alignSelfFor1Setting
     }
     const alignSelfFor2abcSetting = await AsyncStorage.getItem('alignSelfFor2abc')
     if (alignSelfFor2abcSetting !== null && alignSelfFor2abcSetting !== undefined && alignSelfValues.includes(alignSelfFor2abcSetting)) {
-      state.alignSelf2abc = alignSelfFor2abcSetting
+      state.alignSelfFor2abc = alignSelfFor2abcSetting
     }
     const alignSelfFor3hSetting = await AsyncStorage.getItem('alignSelfFor3h')
     if (alignSelfFor3hSetting !== null && alignSelfFor3hSetting !== undefined
        && alignSelfValues.includes(alignSelfFor3hSetting)) {
-      state.alignSelf3h = alignSelfFor3hSetting
+      state.alignSelfFor3h = alignSelfFor3hSetting
     }
   } catch (e) {
     // error reading value

@@ -15,6 +15,7 @@
 import { styles } from '../styles/Styles';
 import ButtonWithMargin from '../components/ButtonWithMargin';
 import SpacerView from '../components/SpacerView';
+import TeachingText from '../components/TeachingText'
  
  function FlexItemsScreen({navigation}) {
    const isDarkMode = useColorScheme() === 'dark';
@@ -54,9 +55,12 @@ import SpacerView from '../components/SpacerView';
             color={isDarkMode ? (Platform.OS === 'ios' ? 'rgb(148, 84, 255)' : 'rgb(93, 0, 255)') : 'rgb(93, 0, 255)'}
             onPress={() => { navigation.navigate('Flex Items\' Values') }} />
           <View style={styles.containerView}>
+            {/*
             <Text style={{ fontSize: 20, color: isDarkMode ? 'white' : 'black', textAlign: 'center', marginHorizontal: 10 }}>
-              With "wrap" assigned and defined width and height, and the flex container properties applied:
+              With "wrap" assigned and defined width and height, and the flex container properties applied (see "Flex Container" screen):
             </Text>
+   */
+            <TeachingText>With "wrap" assigned and defined width and height, the flex container properties applied, and the flex item properties applied:</TeachingText>}
           </View>
           <ScrollView horizontal={true}>
           <View style={styles.containerView}>

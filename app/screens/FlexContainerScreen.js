@@ -23,6 +23,7 @@ import ButtonWithMargin from '../components/ButtonWithMargin';
 import SpacerView from '../components/SpacerView';
 import loadSettings from '../utilities/loadSettings'
 import { styles } from '../styles/Styles';
+import TeachingText from '../components/TeachingText'
 
 let nums = ['1', '2abc', '3\nh', '4', '5\ni', '6def', '7']
 
@@ -68,9 +69,12 @@ const FlexContainerScreen = ({ navigation }) => {
               display: 'flex', alignItems: 'center', width: '100%',
               marginTop: 15
             }}>
+              {/*}
               <Text style={{ fontSize: 20, color: isDarkMode ? 'white' : 'black', textAlign: 'center', marginHorizontal: 10}}>
                 With "wrap" assigned and defined width and height:
               </Text>
+          */}
+          <TeachingText>With "wrap" assigned and defined width and height, and the flex container properties applied:</TeachingText>
             </View>
             <ScrollView horizontal={true}>
               <View style={styles.containerView}>
@@ -94,9 +98,10 @@ const FlexContainerScreen = ({ navigation }) => {
               </View>
             </ScrollView>
             <View style={styles.containerView}>
-              <Text style={{ fontSize: 20, color: isDarkMode ? 'white' : 'black', textAlign: 'center', marginHorizontal: 10}}>
+              {/*<Text style={{ fontSize: 20, color: isDarkMode ? 'white' : 'black', textAlign: 'center', marginHorizontal: 10}}>
                 With "nowrap" assigned and no width and no height defined:
-              </Text>
+                </Text>*/}
+              <TeachingText>With "nowrap" assigned and no width and no height defined, and the flex container properties applied:</TeachingText>
             </View>
             <ScrollView horizontal={true}>
               <View style={styles.containerView}>
@@ -120,10 +125,13 @@ const FlexContainerScreen = ({ navigation }) => {
                 </View>
               </View>
             </ScrollView>
+            {/*}
             <Text style={{ fontSize: 20, color: isDarkMode ? 'white' : 'black', textAlign: 'center', 
             marginHorizontal: 10, marginTop: 20, marginBottom: 10}}>
                 With "wrap-reverse" assigned and defined width and height:
               </Text>
+                */}
+              <TeachingText>With "wrap-reverse" assigned and defined width and height:, and the flex container properties applied:</TeachingText>
             <ScrollView horizontal={true}>
               <View style={styles.containerView}>
                 <View style={{

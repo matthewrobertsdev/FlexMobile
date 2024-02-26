@@ -12,7 +12,7 @@ export default function FlexGapStack() {
 let screenOptions = ({ navigation }) => ({
   headerShown: true,
   headerTintColor: 'white',
-  headerStyle: {backgroundColor: 'rgb(0, 142, 0)'},
+  headerStyle: {backgroundColor: 'rgb(0, 128, 1)'/*'rgb(0, 142, 0)'*/},
   title: "Flex Gap",
   headerTitleStyle: {
     color: 'white'

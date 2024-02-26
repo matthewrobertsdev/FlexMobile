@@ -46,7 +46,7 @@
       navigation.setOptions({
         headerShown: true,
         headerTitle: 'About Flexbox',
-        headerStyle: { backgroundColor: 'rgb(232, 111, 23)' },
+        headerStyle: { backgroundColor: 'rgb(255, 70, 0)'/*'rgb(232, 111, 23)'*/ },
         headerRight: () => <DrawerToggleButton navigation={navigation}/>,
       })
     } , 1000)
@@ -62,26 +62,25 @@
          <View style={{flex: 1, alignItems: 'center', marginTop: 20}}>
          <AboutTeachingTitle>flexbox</AboutTeachingTitle>
           <TeachingText>
-            Flexbox is a css layout manager that is used in web development as well as in 
+            Flexbox is a CSS layout manager that is used in web development as well as in 
             mobile development frameworks such as React Native that use web technologies.
-            It lays out views or elements in rows or columns and any given flexbox and its 
+            It lays out views or elements in rows or columns, and any given flexbox and its 
             child items are highly configurable in terms of how things are laid out.
           </TeachingText>
           <AboutTeachingTitle>syntax</AboutTeachingTitle>
           <TeachingText>
-            The exact syntax is pretty unifrom across web development, as it just uses css 
-            directly.  However, you will see some differences outside of web devlopment in syntax.
-            For example, in React Native, "flex-direction" is coded as flexDirection.  You should look up
-            the syntax used in whatever framework you are using if it differs from plain css.
+            The exact syntax is reasonably unifrom across web development, as it just uses CSS 
+            directly.  However, you will see some differences outside of web development in syntax.
+            For example, in React Native, "flex-direction" is coded as "flexDirection".  You should look up
+            the syntax used in whatever framework you are using if it differs from plain CSS.
           </TeachingText>
           <AboutTeachingTitle>this app</AboutTeachingTitle>
           <TeachingText>
-            Use this app to familiarize yourself with flexbox container and item properties.  
+            This app is designed to help people who know some CSS and Flexbox to become more fluent in using Flexbox.  Use this app to familiarize yourself with Flexbox container and item properties.  
             Many of the properties are demonstrated in this app with their actual usage in this
-            app.  You can see flexbox in action.  Because this app is built with React Native, certain
+            app.  You can see Flexbox in action.  Because this app is built with React Native, certain
             properties, namely "flex-order", "gap", "row-gap", and "column-gap", which are not available
-            in React Native, are discussed but cannot be demonsrated here.  Please note: all the flex
-            items in this app are given a small margin so that they will not be bumping up against
+            at this time in React Native, are discussed but cannot be demonsrated here.  Please note: all the flex items in this app are given a small margin so that they will not be bumping up against
             each other and so that it will be clear where one item ends and the next begins.
           </TeachingText>
          </View>

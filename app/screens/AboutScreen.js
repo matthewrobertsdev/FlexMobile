@@ -15,10 +15,10 @@ import {styles} from '../styles/Styles'
 
 function AboutScreen() {
   const versionString = '1.0'
-  const versionNumString = '4'
+  const versionNumString = '10'
   const isDarkMode = useColorScheme() === 'dark';
   const textColor = isDarkMode ? 'white' : 'black'
-  const buttonColor = isDarkMode ? 'rgb(255,52,52)' : 'rgb(255,59,48)'
+  const buttonColor = isDarkMode ? 'rgb(255,52,52)' : 'rgb(207,0,30)'
 
   return (
     <>
@@ -35,26 +35,26 @@ function AboutScreen() {
             Version {versionString} ({versionNumString})
           </Text>
           <Text style={{...styles.aboutScreenText, color: textColor }}>
-            {'Copyright © 2022 Matt Roberts.  \nAll rights reserved.'}
+            {'Copyright © 2022-2024 Matt Roberts.  \nAll rights reserved.'}
           </Text>
           <ButtonWithMargin text='Frequently Asked Questions' onPress={
             () => {
-              openUrl('https://matthewrobertsdev.github.io/celeritasapps/#/faq')
+              openUrl('https://matthewrobertsdev.github.io/celeritasappshomepage/faq/learnflex')
             }
           } color={buttonColor} />
           <ButtonWithMargin text='Home Page' onPress={
             () => {
-              openUrl('https://matthewrobertsdev.github.io/celeritasapps/#/')
+              openUrl('https://matthewrobertsdev.github.io/celeritasappshomepage')
             }
           } color={buttonColor} />
           <ButtonWithMargin text='Contact the Developer' onPress={
             () => {
-              openUrl('https://matthewrobertsdev.github.io/celeritasapps/#/contact')
+              openUrl('https://matthewrobertsdev.github.io/celeritasappshomepage/contact')
             }
           } color={buttonColor} />
           <ButtonWithMargin text='Privacy Policy' onPress={
             () => {
-              openUrl('https://matthewrobertsdev.github.io/celeritasapps/#/privacy')
+              openUrl('https://matthewrobertsdev.github.io/celeritasappshomepage/privacy/learnflex')
             }
           } color={buttonColor} />
         </View>

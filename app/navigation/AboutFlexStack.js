@@ -15,7 +15,7 @@ export default function FlexGapStack() {
   const iosScreenOptions = ({ navigation }) => ({
     headerShown: true,
     headerTintColor: isDarkMode ? 'white' : 'white',
-    headerStyle: { backgroundColor: 'rgb(232, 111, 23)' },
+    headerStyle: { backgroundColor: 'rgb(219, 58, 0)'/*'rgb(255, 70, 0)''rgb(232, 111, 23)'*/ },
     title: "About Flexbox",
     headerTitleStyle: {
       color: 'white'

@@ -25,7 +25,7 @@ function DrawerComponents() {
     drawerActiveTintColor: 'white',
     drawerInactiveTintColor: 'white',
     drawerStyle: {
-      backgroundColor: 'rgb(255, 71, 0)',
+      backgroundColor: 'rgb(219, 58, 0)'/*'rgb(255, 71, 0)'*/,
       width: (width < 500 || width > 1000) ? 225 : 300
     },
     drawerType: width > 1050 ? 'permanent' : 'front'

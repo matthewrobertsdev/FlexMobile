@@ -15,6 +15,7 @@
 
  import OrderTeachingTitle from '../components/OrderTeachingTitle'
  import TeachingText from '../components/TeachingText'
+ import SpacerView from '../components/SpacerView';
 
    
  function FlexOrderScreen() {
@@ -40,6 +41,7 @@
             if you choose to use the order property as it may interfere with the accessibility of your app
             or webpage.
           </TeachingText>
+          <SpacerView/>
          </View>
        </ScrollView>
      </>

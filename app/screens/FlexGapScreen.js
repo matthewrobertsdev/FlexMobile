@@ -31,10 +31,10 @@ import SpacerView from '../components/SpacerView';
           <GapTeachingTitle>gap</GapTeachingTitle>
           <TeachingText>
             Flexbox has various ways to assign a minimum spacing between rows and columns.
-            If this minimum spacing is already satisifed, the "gap" property will do nothing.  Please note:
+            If this minimum spacing is already satisfied, the "gap" property will do nothing.  Please note:
             as of the writing of this app, React Native (what this app is coded in) does not use "gap",
             so it will not be demonstrated here.  However, it is not a hard concept and is explained here.
-            Assign "gap" a size to give your flex container a minimu spacing for rows and columns.  If you 
+            Assign "gap" a size to give your flex container a minimum spacing for rows and columns.  If you 
             define two sizes, the first will be used for rows and the second will be used for columns.
           </TeachingText>
           <GapTeachingTitle>row-gap</GapTeachingTitle>

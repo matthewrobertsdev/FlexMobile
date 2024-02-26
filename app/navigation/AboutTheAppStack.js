@@ -15,7 +15,7 @@ export default function AboutContainerStack() {
   let screenOptions = ({ navigation }) => ({
     headerShown: true,
     headerTintColor: 'white',
-    headerStyle: { backgroundColor: isDarkMode ? 'rgb(207,0,30)' : 'rgb(255,59,48)' },
+    headerStyle: { backgroundColor: isDarkMode ? 'rgb(207,0,30)' : 'rgb(207,0,30)' /*'rgb(255,59,48)'*/ },
     title: "About Learn Flex",
     headerTitleStyle: {
       color: 'white'

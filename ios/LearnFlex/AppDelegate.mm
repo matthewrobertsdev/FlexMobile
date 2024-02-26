@@ -39,28 +39,28 @@
                                          image:nil
                                     identifier:nil
                                        handler:^(__kindof UIAction* _Nonnull action) {
-    [self openHelpUrl: @"https://matthewrobertsdev.github.io/celeritasapps/#/faq"];
+    [self openHelpUrl: @"https://matthewrobertsdev.github.io/celeritasappshomepage/faq/learnflex"];
   }]];
   
   [actions addObject:[UIAction actionWithTitle:@"Homepage"
                                          image:nil
                                     identifier:nil
                                        handler:^(__kindof UIAction* _Nonnull action) {
-    [self openHelpUrl: @"https://matthewrobertsdev.github.io/celeritasapps/#/"];
+    [self openHelpUrl: @"https://matthewrobertsdev.github.io/celeritasappshomepage"];
   }]];
   
   [actions addObject:[UIAction actionWithTitle:@"Contact the Developer"
                                          image:nil
                                     identifier:nil
                                        handler:^(__kindof UIAction* _Nonnull action) {
-    [self openHelpUrl: @"https://matthewrobertsdev.github.io/celeritasapps/#/contact"];
+    [self openHelpUrl: @"https://matthewrobertsdev.github.io/celeritasappshomepage/contact"];
   }]];
   
   [actions addObject:[UIAction actionWithTitle:@"Privacy Policy"
                                          image:nil
                                     identifier:nil
                                        handler:^(__kindof UIAction* _Nonnull action) {
-    [self openHelpUrl: @"https://matthewrobertsdev.github.io/celeritasapps/#/privacy"];
+    [self openHelpUrl: @"https://matthewrobertsdev.github.io/celeritasappshomepage/privacy/learnflex"];
   }]];
 
   UIMenu* menu =

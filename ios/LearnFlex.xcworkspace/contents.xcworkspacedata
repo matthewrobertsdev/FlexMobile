@@ -2,7 +2,7 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "group:LearnFlex.xcodeproj">
+      location = "group:/Users/mattroberts/Documents/ReactMobile/LearnFlex/ios/LearnFlex.xcodeproj">
    </FileRef>
    <FileRef
       location = "group:Pods/Pods.xcodeproj">

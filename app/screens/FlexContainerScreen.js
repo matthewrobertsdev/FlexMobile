@@ -61,9 +61,9 @@ const FlexContainerScreen = ({ navigation }) => {
             display: 'flex', justifyContent: 'space-between', alignItems: 'center', width: '100%',
             marginTop: 20
           }}>
-            <ButtonWithMargin text='About Flexbox Containers' color={isDarkMode ? (Platform.OS === 'ios' ? 'rgb(53,139,255)' : 'blue') : 'blue'}
+            <ButtonWithMargin text='About Flexbox Containers' color={isDarkMode ? 'rgb(97, 97, 255)' : 'rgb(54, 0, 208)'/*isDarkMode ? 'rgb(255,52,52)' : 'rgb(207,0,30)'*//*isDarkMode ? (Platform.OS === 'ios' ? 'rgb(53,139,255)' : 'blue') : 'blue'*/}
               onPress={() => { navigation.navigate('About Flex Containers') }} />
-            <ButtonWithMargin text='Change Flex Container Values' color={isDarkMode ? (Platform.OS === 'ios' ? 'rgb(53,139,255)' : 'blue') : 'blue'}
+            <ButtonWithMargin text='Change Flex Container Values' color={isDarkMode ? 'rgb(97, 97, 255)' : 'rgb(54, 0, 208)'/*isDarkMode ? 'rgb(255,52,52)' : 'rgb(207,0,30)'*//*isDarkMode ? (Platform.OS === 'ios' ? 'rgb(53,139,255)' : 'blue') : 'blue'*/}
               onPress={() => { navigation.navigate('Flex Container Values') }} />
             <View style={{
               display: 'flex', alignItems: 'center', width: '100%',
@@ -86,7 +86,7 @@ const FlexContainerScreen = ({ navigation }) => {
                   {nums.map((value, index) => {
                     return <View style={{
                       padding: 10,
-                      backgroundColor: isDarkMode ? 'blue' : 'blue'/*'rgb(96, 31, 159)' : 'rgb(183,84,233)'*/, borderRadius: 10,
+                      backgroundColor: 'rgb(54, 0, 208)'/*'rgb(207,0,30)'*//*isDarkMode ? 'blue' : 'blue'*//*'rgb(96, 31, 159)' : 'rgb(183,84,233)'*/, borderRadius: 10,
                       justifyContent: 'center', alignItems: 'center', margin: 5
                     }} key={index}>
                       <Text style={{ color: isDarkMode ? 'white' : 'white', fontSize: 20 }}>
@@ -114,7 +114,7 @@ const FlexContainerScreen = ({ navigation }) => {
                   {nums.map((value, index) => {
                     return <View style={{
                       padding: 10,
-                      backgroundColor: isDarkMode ? 'blue' : 'blue'/*'rgb(96, 31, 159)' : 'rgb(183,84,233)'*/, borderRadius: 10,
+                      backgroundColor: 'rgb(54, 0, 208)'/*'rgb(207,0,30)'/*isDarkMode ? 'blue' : 'blue'*//*'rgb(96, 31, 159)' : 'rgb(183,84,233)'*/, borderRadius: 10,
                       justifyContent: 'center', alignItems: 'center', margin: 5
                     }} key={index}>
                       <Text style={{ color: isDarkMode ? 'white' : 'white', fontSize: 20 }}>
@@ -142,7 +142,7 @@ const FlexContainerScreen = ({ navigation }) => {
                   {nums.map((value, index) => {
                     return <View style={{
                       padding: 10,
-                      backgroundColor: isDarkMode ? 'blue' : 'blue'/*'rgb(96, 31, 159)' : 'rgb(183,84,233)'*/, borderRadius: 10,
+                      backgroundColor: 'rgb(54, 0, 208)'/*'rgb(207,0,30)'/*isDarkMode ? 'blue' : 'blue'*//*'rgb(96, 31, 159)' : 'rgb(183,84,233)'*/, borderRadius: 10,
                       justifyContent: 'center', alignItems: 'center', margin: 5
                     }} key={index}>
                       <Text style={{ color: isDarkMode ? 'white' : 'white', fontSize: 20 }}>

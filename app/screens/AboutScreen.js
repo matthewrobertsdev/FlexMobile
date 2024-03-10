@@ -15,10 +15,10 @@ import {styles} from '../styles/Styles'
 
 function AboutScreen() {
   const versionString = '1.0'
-  const versionNumString = '10'
+  const versionNumString = '11'
   const isDarkMode = useColorScheme() === 'dark';
   const textColor = isDarkMode ? 'white' : 'black'
-  const buttonColor = isDarkMode ? 'rgb(255,52,52)' : 'rgb(207,0,30)'
+  const buttonColor = isDarkMode ? (Platform.OS === 'ios' ? 'rgb(53,139,255)' : 'blue') : 'blue'//isDarkMode ? 'rgb(255,52,52)' : 'rgb(207,0,30)'
 
   return (
     <>

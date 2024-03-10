@@ -10,12 +10,12 @@ import DrawerToggleButton from '../components/DrawerToggleButton';
 const Stack = createStackNavigator();
 
 export default function AboutContainerStack() {
-  const isDarkMode = useColorScheme() === 'dark';
+  //const isDarkMode = useColorScheme() === 'dark';
 
   let screenOptions = ({ navigation }) => ({
     headerShown: true,
     headerTintColor: 'white',
-    headerStyle: { backgroundColor: isDarkMode ? 'rgb(207,0,30)' : 'rgb(207,0,30)' /*'rgb(255,59,48)'*/ },
+    headerStyle: { backgroundColor: 'blue' /*isDarkMode ? 'rgb(207,0,30)' : 'rgb(207,0,30)'*/ /*'rgb(255,59,48)'*/ },
     title: "About Learn Flex",
     headerTitleStyle: {
       color: 'white'

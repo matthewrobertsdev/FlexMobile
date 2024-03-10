@@ -30,7 +30,7 @@ const ContainerValueScreen = ({route}) => {
     }
   }
 
-  const textColor = isDarkMode ? (Platform.OS === 'ios' ? 'rgb(53,139,255)' : 'blue') : 'blue'
+  const textColor = isDarkMode ? (Platform.OS === 'ios' ? 'rgb(97, 97, 255)' : 'rgb(54, 0, 208)') : 'rgb(54, 0, 208)'/*(Platform.OS === 'ios' ? 'rgb(53,139,255)' : 'blue') : 'blue'*/
 
   return (
     <SafeAreaView edges={['left', 'right']}  style={{flex: 1}}>

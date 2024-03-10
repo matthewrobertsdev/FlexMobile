@@ -16,7 +16,7 @@ export default function FlexContainerStack() {
     return ({ navigation }) => ({
       headerShown: true,
       headerTintColor: 'white',
-      headerStyle: { backgroundColor: 'blue' },
+      headerStyle: { backgroundColor: 'rgb(54, 0, 208)'/*'rgb(218, 0, 30)'*//*'blue'*/ },
       title: title,
       headerRight: () => <DrawerToggleButton navigation={navigation} />
     })

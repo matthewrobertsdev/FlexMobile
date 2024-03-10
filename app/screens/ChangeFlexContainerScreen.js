@@ -31,8 +31,7 @@ const jsonArray = [
 const ChangeFlexContainerScreen = ({ navigation }) => {
   const [settings] = useContext(SettingsContext);
   const isDarkMode = useColorScheme() === 'dark';
-
-  const textColor = isDarkMode ? (Platform.OS === 'ios' ? 'rgb(53,139,255)' : 'blue') : 'blue'
+  const textColor = isDarkMode ? (Platform.OS === 'ios' ? 'rgb(97, 97, 255)' : 'rgb(54, 0, 208)') : 'rgb(54, 0, 208)'/*(Platform.OS === 'ios' ? 'rgb(255,52,52)' : 'rgb(207,0,30)') : 'rgb(207,0,30)'*//*(Platform.OS === 'ios' ? 'rgb(53,139,255)' : 'blue') : 'blue'*/
 
     return (
       <>
